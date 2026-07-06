@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, BookOpen, Youtube, Instagram } from "lucide-react";
+import { Phone, MessageCircle, BookOpen, Youtube, Instagram, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import { SiteLayout } from "@/components/site/Layout";
 import { SocialBadges } from "@/components/site/SocialBadges";
 import hero from "@/assets/hero-bobcat-showroom.png";
@@ -389,6 +391,39 @@ const contactChannels = [
 ] as const;
 
 function ContactCTASection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    formData.append("access_key", "d96bafbb-731c-420f-bc12-086621ba8d2f");
+    formData.append("subject", "[함손건설기계] 웹사이트에서 새로운 상담 신청이 접수되었습니다.");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("상담 신청이 완료되었습니다! 빠른 시일 내에 연락드리겠습니다.");
+        form.reset();
+      } else {
+        toast.error("전송에 실패했습니다. 대표번호(1577-7269)로 직접 문의해 주세요.");
+      }
+    } catch (err) {
+      toast.error("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="relative overflow-hidden py-28 bg-[color:var(--surface)] scroll-mt-20">
       <div
@@ -453,9 +488,7 @@ function ContactCTASection() {
               className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/40 via-white/10 to-transparent opacity-60"
             />
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
+              onSubmit={handleSubmit}
               className="relative rounded-2xl border border-white/10 bg-black/40 p-7 md:p-9 backdrop-blur-xl shadow-card space-y-5"
             >
               <div className="flex items-center justify-between">
@@ -466,8 +499,8 @@ function ContactCTASection() {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <FormField label="이름" name="name" placeholder="홍길동" />
-                <FormField label="연락처" name="phone" placeholder="010-0000-0000" />
+                <FormField label="이름" name="name" placeholder="홍길동" required />
+                <FormField label="연락처" name="phone" placeholder="010-0000-0000" required />
               </div>
 
               <div>
@@ -492,6 +525,7 @@ function ContactCTASection() {
                 <textarea
                   name="message"
                   rows={4}
+                  required
                   placeholder="장비 모델, 사용 현장, 일정 등을 적어주세요."
                   className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary/60 focus:bg-white/[0.07]"
                 />
@@ -499,11 +533,21 @@ function ContactCTASection() {
 
               <button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-md bg-primary px-6 py-4 text-sm font-bold text-primary-foreground shadow-glow transition hover:opacity-95"
+                disabled={isSubmitting}
+                className="group relative w-full overflow-hidden rounded-md bg-primary px-6 py-4 text-sm font-bold text-primary-foreground shadow-glow transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
               >
                 <span className="relative z-10 inline-flex items-center justify-center gap-2">
-                  상담신청
-                  <span className="transition group-hover:translate-x-1">→</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      전송 중...
+                    </>
+                  ) : (
+                    <>
+                      상담신청
+                      <span className="transition group-hover:translate-x-1">→</span>
+                    </>
+                  )}
                 </span>
               </button>
 
@@ -523,11 +567,13 @@ function FormField({
   name,
   placeholder,
   type = "text",
+  required = false,
 }: {
   label: string;
   name: string;
   placeholder?: string;
   type?: string;
+  required?: boolean;
 }) {
   return (
     <div>
@@ -535,6 +581,7 @@ function FormField({
       <input
         type={type}
         name={name}
+        required={required}
         placeholder={placeholder}
         className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary/60 focus:bg-white/[0.07]"
       />
