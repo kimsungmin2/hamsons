@@ -271,7 +271,7 @@ function Index() {
           {/* TODO: replace COMPANY_YOUTUBE_ID with the provided YouTube video ID */}
           <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/60 shadow-card backdrop-blur">
             <iframe
-              src={`https://www.youtube.com/watch?v=DvVLthI9WOs&list=PLHxSBFHkiRFI&pp=sAgC`}
+              src="https://www.youtube.com/embed/DvVLthI9WOs"
               title="함손건설기계 회사 소개 영상"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
