@@ -1,0 +1,101 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Pretendard", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-steel: var(--steel);
+  --color-steel-foreground: var(--steel-foreground);
+  --color-surface: var(--surface);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Dark industrial palette: deep charcoal/black base, metallic surfaces, Kubota orange accent */
+  --background: oklch(0.16 0.005 250);
+  --foreground: oklch(0.97 0.003 250);
+
+  --surface: oklch(0.20 0.006 250);
+  --card: oklch(0.22 0.007 250);
+  --card-foreground: oklch(0.97 0.003 250);
+
+  --popover: oklch(0.20 0.006 250);
+  --popover-foreground: oklch(0.97 0.003 250);
+
+  /* Kubota-style orange */
+  --primary: oklch(0.70 0.20 45);
+  --primary-foreground: oklch(0.14 0.005 250);
+
+  --secondary: oklch(0.26 0.008 250);
+  --secondary-foreground: oklch(0.97 0.003 250);
+
+  --muted: oklch(0.24 0.007 250);
+  --muted-foreground: oklch(0.70 0.01 250);
+
+  --accent: oklch(0.70 0.20 45);
+  --accent-foreground: oklch(0.14 0.005 250);
+
+  --destructive: oklch(0.60 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.30 0.008 250);
+  --input: oklch(0.28 0.008 250);
+  --ring: oklch(0.70 0.20 45);
+
+  --steel: oklch(0.24 0.007 250);
+  --steel-foreground: oklch(0.95 0.003 250);
+
+  --gradient-hero: linear-gradient(180deg, oklch(0.10 0.005 250 / 0.55) 0%, oklch(0.06 0.005 250 / 0.92) 100%);
+  --gradient-orange: linear-gradient(135deg, oklch(0.74 0.19 55), oklch(0.58 0.22 32));
+  --shadow-glow: 0 25px 70px -20px oklch(0.70 0.20 45 / 0.55);
+  --shadow-card: 0 18px 40px -18px oklch(0 0 0 / 0.55);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-orange { background: var(--gradient-orange); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .container-x { padding-inline: 1.5rem; max-width: 1280px; margin-inline: auto; }
+}
