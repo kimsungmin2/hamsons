@@ -1,10 +1,15 @@
+import logo from "@/assets/logo.png";
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-[color:var(--surface)] mt-24">
       <div className="container-x py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-display text-2xl font-bold">함손건설기계</div>
-          <p className="mt-3 text-sm text-muted-foreground max-w-sm">
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="HamSon" className="h-9 md:h-10 w-auto object-contain" />
+            <span className="font-display text-2xl font-bold text-foreground">함손건설기계</span>
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             대한민국 축산, 건설 현장의 동반자 스키드로더, 굴착기, 휠로더등 밥캣 중장비 신차, 렌탈, 정비를 한 곳에서.
           </p>
         </div>

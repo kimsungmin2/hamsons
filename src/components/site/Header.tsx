@@ -1,6 +1,8 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
+import logo from "@/assets/logo.png";
+
 type NavItem =
   | { to: string; label: string; external?: false; hash?: string }
   | { to: string; label: string; external: true };
@@ -56,14 +58,9 @@ export function Header() {
       }`}
     >
       <div className="container-x flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-gradient-orange shadow-glow">
-            <span className="h-2 w-2 rounded-sm bg-primary-foreground" />
-          </span>
-          <span
-            className="font-display text-lg font-black tracking-tighter text-white"
-            style={{ textShadow: "0 0 18px rgba(255,255,255,0.12)" }}
-          >
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <img src={logo} alt="HamSon" className="h-9 md:h-10 w-auto object-contain transition-transform group-hover:scale-105" />
+          <span className="font-display text-lg md:text-xl font-bold tracking-tight text-white">
             함손건설기계
           </span>
         </Link>
