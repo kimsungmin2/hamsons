@@ -76,43 +76,43 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/90 sm:from-black/60 sm:via-black/55" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent sm:from-black/70 sm:via-black/30" />
-        <div className="relative z-10 w-full px-5 sm:px-10 md:px-16 lg:px-24 flex h-full flex-col justify-end pt-24 pb-10 sm:pt-32 md:pb-24 md:pt-32 text-white">
+        <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-24 flex h-full flex-col justify-end pt-28 pb-[15vh] md:pb-24 md:pt-32 text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl text-left"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] sm:text-xs font-semibold tracking-wider text-white backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-2.5 py-1 text-[9px] sm:text-xs font-semibold tracking-wider text-white/90 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(242,108,35,0.8)]" />
               KOREA · CONSTRUCTION EQUIPMENT
             </span>
-            <h1 className="mt-3.5 sm:mt-6 font-display text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.08] sm:leading-[1.02] md:leading-[0.95] text-balance">
+            <h1 className="mt-3.5 sm:mt-6 font-display text-[28px] sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.12] sm:leading-[1.02] md:leading-[0.95] text-balance">
               글로벌 시장을
-              <br />
-              <span className="text-primary">움직이는 힘.</span>
+              <br className="hidden sm:inline" />
+              <span className="text-primary"> 움직이는 힘.</span>
             </h1>
-            <p className="mt-3.5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg text-white/90 sm:text-white/85 leading-relaxed sm:leading-normal">
+            <p className="mt-3 sm:mt-6 max-w-xl text-xs sm:text-base md:text-lg text-white/85 leading-relaxed sm:leading-normal">
               대한민국 축산·건설 현장의 든든한 파트너. 스키드로더 / 미니 굴착기 / 컴팩트 휠 로더까지 밥캣 중장비의
               시작과 끝을 담당하고 있습니다.
             </p>
-            <div className="mt-7 sm:mt-10 flex flex-col sm:flex-row md:flex-wrap items-stretch sm:items-start gap-2.5 sm:gap-3">
+            <div className="mt-6 sm:mt-10 flex flex-row items-center gap-2 sm:gap-3">
               <Link
                 to="/products"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition cursor-pointer text-center"
+                className="inline-flex h-10 md:h-auto items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 md:px-6 md:py-3.5 text-xs md:text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition cursor-pointer text-center"
               >
-                제품 라인업 보기 →
+                제품 보기 →
               </Link>
               <a
                 href="tel:+8215777269"
-                className="group inline-flex items-center justify-center sm:justify-start gap-3 rounded-md border border-white/25 bg-white/10 sm:bg-white/5 px-5 py-3 text-white backdrop-blur transition hover:border-primary/60 hover:bg-white/10"
+                className="group inline-flex h-10 md:h-auto items-center justify-center gap-2 md:gap-3 rounded-lg border border-white/20 bg-white/5 px-3.5 py-1.5 md:px-5 md:py-3 text-white backdrop-blur transition hover:border-primary/60 hover:bg-white/10"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/20 bg-primary/15 text-primary transition group-hover:bg-primary/25">
-                  <Phone className="h-4 w-4" />
+                <span className="flex h-6 w-6 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-primary/10 text-primary transition group-hover:bg-primary/20">
+                  <Phone className="h-3 w-3 md:h-4 md:w-4" />
                 </span>
-                <span className="flex flex-col text-left leading-tight">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">대표번호</span>
-                  <span className="font-display text-base sm:text-lg font-bold tracking-wide">1577-7269</span>
+                <span className="flex flex-col text-left leading-none justify-center">
+                  <span className="hidden md:inline text-[10px] font-semibold uppercase tracking-[0.15em] text-white/50 mb-0.5">대표번호</span>
+                  <span className="font-display text-[12px] md:text-lg font-bold tracking-wide">1577-7269</span>
                 </span>
               </a>
             </div>
