@@ -252,35 +252,6 @@ export function Header() {
                 );
               })}
 
-              {/* Mobile CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: nav.length * 0.04 }}
-                className="mt-6 w-full max-w-xs"
-              >
-                <a
-                  href="tel:+8215777269"
-                  className="flex items-center justify-center gap-2.5 w-full rounded-xl bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-glow hover:opacity-90 transition"
-                >
-                  <Phone className="h-4.5 w-4.5" />
-                  1577-7269 전화 상담
-                </a>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: nav.length * 0.04 + 0.05 }}
-                className="w-full max-w-xs"
-              >
-                <a
-                  href="/#contact"
-                  onClick={handleContactClick}
-                  className="flex items-center justify-center gap-2 w-full rounded-xl border border-white/15 bg-white/5 px-6 py-4 text-base font-semibold text-white backdrop-blur transition hover:border-primary/40 hover:bg-white/10 cursor-pointer"
-                >
-                  상담 신청 →
-                </a>
-              </motion.div>
             </motion.nav>
           </motion.div>
         )}

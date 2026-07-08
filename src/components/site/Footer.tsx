@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-[color:var(--surface)] mt-12 md:mt-24">
-      <div className="container-x py-10 md:py-16 grid gap-8 md:gap-10 md:grid-cols-4">
+      <div className="container-x py-10 md:py-16 grid gap-8 md:gap-10 grid-cols-1 md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
             <img src={logo} alt="HamSon" className="h-9 md:h-10 w-auto object-contain" />
@@ -13,7 +13,7 @@ export function Footer() {
             대한민국 축산 건설 현장의 동반자 스키드로더, 굴착기, 휠로더 등 밥캣 중장비 신차, 렌탈, 정비를 한 곳에서.
           </p>
         </div>
-        <div>
+        <div className="md:col-span-2">
           <h4 className="text-sm font-semibold mb-3">본사</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
             전남광주통합특별시 나주시 왕곡면 장산양산길 18
