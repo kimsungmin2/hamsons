@@ -68,24 +68,24 @@ function ProductsPage() {
 
   return (
     <SiteLayout>
-      <section className="container-x py-20 md:py-28">
-        <p className="text-primary text-sm font-semibold tracking-widest uppercase">Products</p>
-        <h1 className="mt-3 text-5xl md:text-7xl font-bold text-balance max-w-3xl">{copy.title}</h1>
-        <p className="mt-6 text-muted-foreground text-lg max-w-2xl">{copy.desc}</p>
+      <section className="container-x py-14 md:py-28">
+        <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">Products</p>
+        <h1 className="mt-2 md:mt-3 text-2xl md:text-7xl font-bold text-balance max-w-3xl">{copy.title}</h1>
+        <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg max-w-2xl">{copy.desc}</p>
         {!isCategoryView && (
           <Link
             to="/products"
             search={{ category: "all" }}
-            className="mt-8 inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-5 py-2.5 text-sm font-semibold hover:border-primary/50 hover:text-primary transition"
+            className="mt-5 md:mt-8 inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-4 md:px-5 py-2 md:py-2.5 text-xs md:text-sm font-semibold hover:border-primary/50 hover:text-primary transition"
           >
             ← 전체 카테고리로 돌아가기
           </Link>
         )}
       </section>
 
-      <section className="container-x pb-28">
+      <section className="container-x pb-14 md:pb-28">
         {isCategoryView ? (
-          <div key="cats" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in duration-300">
+          <div key="cats" className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 animate-in fade-in duration-300">
             {CATEGORY_CARDS.map((c) => {
               const count = products.filter((p) => p.category === c.id).length;
               return (
@@ -105,15 +105,15 @@ function ProductsPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">
+                  <div className="absolute inset-x-0 bottom-0 p-3 md:p-6 flex items-end justify-between gap-2 md:gap-4">
                     <div>
-                      <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+                      <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
                         Category · {count}종
                       </div>
-                      <h3 className="mt-2 text-2xl font-bold text-white">{c.name}</h3>
-                      <p className="mt-1 text-sm text-white/70">{c.tagline}</p>
+                      <h3 className="mt-1 md:mt-2 text-sm md:text-2xl font-bold text-white">{c.name}</h3>
+                      <p className="mt-0.5 md:mt-1 text-[10px] md:text-sm text-white/70 hidden sm:block">{c.tagline}</p>
                     </div>
-                    <span className="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur transition group-hover:bg-primary group-hover:border-primary">
+                    <span className="shrink-0 hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur transition group-hover:bg-primary group-hover:border-primary">
                       →
                     </span>
                   </div>
@@ -134,7 +134,7 @@ function ProductsPage() {
             </Link>
           </div>
         ) : (
-          <div key={category} className="grid md:grid-cols-2 gap-6 animate-in fade-in duration-300">
+          <div key={category} className="grid md:grid-cols-2 gap-4 md:gap-6 animate-in fade-in duration-300">
             {visible.map((p) => (
               <Link
                 key={p.id}
@@ -151,25 +151,25 @@ function ProductsPage() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6 flex items-start justify-between gap-4">
+                <div className="p-4 md:p-6 flex items-start justify-between gap-3 md:gap-4">
                   <div className="min-w-0">
-                    <div className="font-mono text-xs text-primary">{p.code}</div>
-                    <h3 className="mt-1 text-xl font-bold truncate">{p.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{p.shortDesc}</p>
+                    <div className="font-mono text-[10px] md:text-xs text-primary">{p.code}</div>
+                    <h3 className="mt-0.5 md:mt-1 text-base md:text-xl font-bold truncate">{p.name}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">{p.shortDesc}</p>
                   </div>
                   <span className="shrink-0 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs text-primary">
                     {p.tag}
                   </span>
                 </div>
-                <div className="px-6 pb-5 grid grid-cols-3 gap-3 border-t border-border/60 pt-4">
+                <div className="px-4 md:px-6 pb-3 md:pb-5 grid grid-cols-3 gap-2 md:gap-3 border-t border-border/60 pt-3 md:pt-4">
                   {p.specs.slice(0, 3).map((s) => (
                     <div key={s.label}>
-                      <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
-                      <div className="mt-1 text-sm font-semibold">{s.value}</div>
+                      <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
+                      <div className="mt-0.5 md:mt-1 text-xs md:text-sm font-semibold">{s.value}</div>
                     </div>
                   ))}
                 </div>
-                <div className="px-6 pb-6 flex items-center justify-between text-sm">
+                <div className="px-4 md:px-6 pb-4 md:pb-6 flex items-center justify-between text-xs md:text-sm">
                   <span className="text-muted-foreground">모델 {p.code}</span>
                   <span className="text-primary font-semibold transition group-hover:translate-x-1">상세 보기 →</span>
                 </div>

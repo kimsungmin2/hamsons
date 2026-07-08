@@ -181,11 +181,11 @@ function AboutPage() {
   return (
     <SiteLayout>
       {/* Group network */}
-      <section className="container-x pt-24 md:pt-28 pb-32">
-        <div className="max-w-3xl mb-10">
-          <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase">Group Network</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">계열사 · 사업 부문</h2>
-          <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed">
+      <section className="container-x pt-20 md:pt-28 pb-16 md:pb-32">
+        <div className="max-w-3xl mb-6 md:mb-10">
+          <p className="text-primary text-xs md:text-sm font-semibold tracking-[0.3em] uppercase">Group Network</p>
+          <h2 className="mt-2 md:mt-3 text-2xl md:text-5xl font-bold tracking-tight">계열사 · 사업 부문</h2>
+          <p className="mt-3 md:mt-5 text-muted-foreground text-sm md:text-lg leading-relaxed">
             신차 판매부터 렌탈 정비까지 — 각 사업 부문이 유기적으로 연결되어 고객의 신뢰를 완성합니다.
           </p>
         </div>
@@ -193,9 +193,9 @@ function AboutPage() {
         {/* Glass pill tabs */}
         <nav
           aria-label="계열사 카테고리"
-          className="sticky top-16 z-30 -mx-6 px-6 mb-12 py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 bg-background/85 border-y border-border/70"
+          className="sticky top-16 z-30 -mx-6 px-6 mb-8 md:mb-12 py-2.5 md:py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 bg-background/85 border-y border-border/70 overflow-x-auto"
         >
-          <ul className="flex flex-wrap justify-start gap-2 md:gap-3">
+          <ul className="flex justify-start gap-1.5 md:gap-3">
             {navItems.map((n, i) => {
               const isActive = activeId === n.id;
               return (
@@ -203,7 +203,7 @@ function AboutPage() {
                   <a
                     href={`#${n.id}`}
                     onClick={(e) => handleNavClick(e, n.id)}
-                    className={`inline-flex items-center gap-2 rounded-full border px-5 md:px-6 py-2.5 text-sm font-semibold whitespace-nowrap transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 ${
+                    className={`inline-flex items-center gap-1.5 md:gap-2 rounded-full border px-3 md:px-6 py-2 md:py-2.5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 ${
                       isActive
                         ? "border-primary/70 bg-primary text-primary-foreground shadow-glow"
                         : "border-border/70 bg-white/[0.03] text-foreground/80 backdrop-blur hover:border-primary/40 hover:text-foreground hover:bg-white/[0.06]"
@@ -222,14 +222,14 @@ function AboutPage() {
           </ul>
         </nav>
 
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-10 md:space-y-24">
           {affiliates.map((co, idx) => {
             const reverse = idx % 2 === 1;
             return (
               <article key={co.name} id={`aff-${idx}`} className="scroll-mt-32 group animate-fade-in">
                 {/* Group label + accent line */}
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="font-mono text-xs tracking-[0.4em] text-primary">
+                <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                  <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] text-primary">
                     GROUP {String(idx + 1).padStart(2, "0")}
                   </span>
                   <span className="h-px flex-1 bg-gradient-to-r from-primary/60 via-border to-transparent" />
@@ -242,25 +242,25 @@ function AboutPage() {
                   <div className="relative grid lg:grid-cols-12 gap-0">
                     {/* Info column */}
                     <div
-                      className={`lg:col-span-5 p-8 md:p-12 flex flex-col justify-between ${
+                      className={`lg:col-span-5 p-5 md:p-12 flex flex-col justify-between ${
                         reverse ? "lg:order-2" : "lg:order-1"
                       }`}
                     >
                       <div>
-                        <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+                        <h3 className="font-display text-xl md:text-4xl font-bold tracking-tight leading-tight">
                           {co.name}
                         </h3>
-                        <p className="mt-5 text-muted-foreground text-base leading-relaxed">{co.intro}</p>
+                        <p className="mt-3 md:mt-5 text-muted-foreground text-sm md:text-base leading-relaxed">{co.intro}</p>
 
                         {/* Meta */}
-                        <dl className="mt-8 space-y-5">
-                          <div className="flex items-start gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                        <dl className="mt-5 md:mt-8 space-y-4 md:space-y-5">
+                          <div className="flex items-start gap-3 md:gap-4">
+                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <MapPin className="h-4 w-4 text-primary" />
                             </span>
                             <div className="flex-1">
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">주소</dt>
-                              <dd className="mt-1 text-sm md:text-[15px] text-foreground">
+                              <dd className="mt-1 text-xs md:text-[15px] text-foreground">
                                 <a
                                   href={`https://map.naver.com/p/search/${encodeURIComponent(co.address)}`}
                                   target="_blank"
@@ -295,8 +295,8 @@ function AboutPage() {
                             </div>
                           </div>
 
-                          <div className="flex items-start gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                          <div className="flex items-start gap-3 md:gap-4">
+                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Phone className="h-4 w-4 text-primary" />
                             </span>
                             <div>
@@ -306,26 +306,26 @@ function AboutPage() {
                               <dd className="mt-1">
                                 <a
                                   href={`tel:${co.phone.replace(/-/g, "")}`}
-                                  className="text-sm md:text-[15px] font-semibold tracking-wide hover:text-primary transition-colors"
+                                  className="text-xs md:text-[15px] font-semibold tracking-wide hover:text-primary transition-colors"
                                 >
                                   {co.phone}
                                 </a>
                               </dd>
                             </div>
                           </div>
-                          <div className="flex items-start gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                          <div className="flex items-start gap-3 md:gap-4">
+                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Printer className="h-4 w-4 text-primary" />
                             </span>
                             <div>
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">FAX</dt>
-                              <dd className="mt-1 text-sm md:text-[15px] font-semibold tracking-wide text-foreground">
+                              <dd className="mt-1 text-xs md:text-[15px] font-semibold tracking-wide text-foreground">
                                 {co.fax && co.fax.trim() ? co.fax : "준비중"}
                               </dd>
                             </div>
                           </div>
-                          <div className="flex items-start gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                          <div className="flex items-start gap-3 md:gap-4">
+                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Briefcase className="h-4 w-4 text-primary" />
                             </span>
                             <div>
@@ -350,7 +350,7 @@ function AboutPage() {
 
                     {/* Visual column */}
                     <div
-                      className={`lg:col-span-7 grid gap-3 p-3 md:p-4 bg-[color:var(--steel)]/40 ${
+                      className={`lg:col-span-7 grid gap-2 md:gap-3 p-2 md:p-4 bg-[color:var(--steel)]/40 ${
                         reverse ? "lg:order-1" : "lg:order-2"
                       }`}
                     >

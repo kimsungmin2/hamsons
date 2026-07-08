@@ -112,25 +112,25 @@ function ServicePage() {
 
 function CoreCards() {
   return (
-    <section className="container-x py-24 md:py-32">
-      <div className="max-w-2xl mb-14">
+    <section className="container-x py-14 md:py-32">
+      <div className="max-w-2xl mb-8 md:mb-14">
         <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Core Services</p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">핵심 정비 서비스</h2>
-        <p className="mt-4 text-muted-foreground leading-relaxed">
+        <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">핵심 정비 서비스</h2>
+        <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
           예방·대응·복원의 전 과정을 아우르는 4대 정비 서비스입니다.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
         {coreServices.map((s, i) => (
           <Reveal key={s.title} delay={i * 80}>
-            <article className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card hover:-translate-y-1 shadow-card">
+            <article className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-4 md:p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card hover:-translate-y-1 shadow-card">
               <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
-                <s.icon className="h-5 w-5 text-primary-foreground" />
+              <div className="grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
+                <s.icon className="h-4 w-4 md:h-5 md:w-5 text-primary-foreground" />
               </div>
-              <h3 className="mt-6 font-display text-xl font-bold">{s.title}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              <ul className="mt-6 space-y-2 border-t border-border/60 pt-5">
+              <h3 className="mt-4 md:mt-6 font-display text-base md:text-xl font-bold">{s.title}</h3>
+              <p className="mt-2 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <ul className="mt-4 md:mt-6 space-y-1.5 md:space-y-2 border-t border-border/60 pt-3 md:pt-5">
                 {s.benefits.map((b) => (
                   <li key={b} className="flex items-center gap-2 text-xs text-foreground/80">
                     <span className="h-1 w-1 rounded-full bg-primary" />
@@ -156,24 +156,24 @@ function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.70_0.20_45/0.18),transparent_60%)]" />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
       </div>
-      <div className="container-x pt-32 pb-28 md:pt-44 md:pb-40">
+      <div className="container-x pt-24 pb-16 md:pt-44 md:pb-40">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Service & Maintenance
           </div>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-balance leading-[1.05]">
+          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
             멈추지 않는 현장,
             <br />
             <span className="text-primary">완벽한 정비로 답합니다.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base md:text-lg text-foreground/75 leading-relaxed">
+          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-foreground/75 leading-relaxed">
             밥캣 전문 엔지니어, 100% 순정 부품, 전남/영남 담당
             <br className="hidden md:block" />
             함손건설기계의 정비 서비스는 신뢰를 기반으로 정확한 업무 처리를 통해 고객님들의 문제를 해결해드립니다.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <ContactButton className="group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90">
+          <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-3">
+            <ContactButton className="group inline-flex items-center gap-2 rounded-md bg-primary px-4 md:px-6 py-2.5 md:py-3.5 text-xs md:text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90">
               상담신청
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </ContactButton>
@@ -250,16 +250,16 @@ function Hero() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="container-x pb-24 md:pb-32">
-      <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14 items-start">
+    <section className="container-x pb-14 md:pb-32">
+      <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 md:gap-14 items-start">
         <div>
           <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">FAQ</p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold leading-[1.1]">
+          <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold leading-[1.1]">
             자주 묻는
             <br />
             질문
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
+          <p className="mt-3 md:mt-6 text-sm md:text-base text-muted-foreground leading-relaxed">
             궁금하신 내용을 확인해 보세요. 추가 문의는 정비 상담을 통해 언제든 답변드립니다.
           </p>
         </div>
@@ -273,7 +273,7 @@ function Faq() {
                   className="group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors"
                 >
                   <span
-                    className={`font-display text-lg md:text-xl font-semibold transition-colors ${
+                    className={`font-display text-base md:text-xl font-semibold transition-colors ${
                       active ? "text-primary" : "text-foreground group-hover:text-primary"
                     }`}
                   >
@@ -292,7 +292,7 @@ function Faq() {
                     active ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <p className="min-h-0 text-sm md:text-base text-muted-foreground leading-relaxed pr-12">{f.a}</p>
+                  <p className="min-h-0 text-xs md:text-base text-muted-foreground leading-relaxed pr-6 md:pr-12">{f.a}</p>
                 </div>
               </li>
             );
@@ -305,19 +305,19 @@ function Faq() {
 
 function FinalCta() {
   return (
-    <section className="container-x pb-28 md:pb-36">
-      <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-card via-surface to-background p-10 md:p-16">
+    <section className="container-x pb-16 md:pb-36">
+      <div className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/70 bg-gradient-to-br from-card via-surface to-background p-6 md:p-16">
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
           <div className="max-w-2xl">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p>
-            <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-[1.05]">
+            <h2 className="mt-3 md:mt-4 font-display text-2xl md:text-6xl font-bold leading-[1.1] md:leading-[1.05]">
               장비 상태가
               <br />
               걱정되시나요?
             </h2>
-            <p className="mt-6 text-base md:text-lg text-foreground/75 leading-relaxed">
+            <p className="mt-3 md:mt-6 text-sm md:text-lg text-foreground/75 leading-relaxed">
               전문 정비 상담을 받아보세요. 24시간 내 담당 엔지니어가 회신드립니다.
             </p>
           </div>

@@ -16,29 +16,29 @@ function ContactPage() {
   const [sent, setSent] = useState(false);
   return (
     <SiteLayout>
-      <section className="container-x py-20 md:py-28 grid lg:grid-cols-2 gap-16">
+      <section className="container-x py-14 md:py-28 grid lg:grid-cols-2 gap-8 md:gap-16">
         <div>
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase">Contact</p>
-          <h1 className="mt-3 text-5xl md:text-7xl font-bold text-balance">
+          <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">Contact</p>
+          <h1 className="mt-2 md:mt-3 text-2xl md:text-7xl font-bold text-balance">
             현장의 이야기를<br />
             <span className="text-primary">들려주세요.</span>
           </h1>
-          <div className="mt-12 space-y-8">
+          <div className="mt-6 md:mt-12 space-y-5 md:space-y-8">
             <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-widest">대표 전화</div>
-              <div className="mt-2 text-2xl font-bold">02-1234-5678</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">대표 전화</div>
+              <div className="mt-1.5 md:mt-2 text-lg md:text-2xl font-bold">02-1234-5678</div>
             </div>
             <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-widest">긴급 정비</div>
-              <div className="mt-2 text-2xl font-bold text-primary">010-9999-0000</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">긴급 정비</div>
+              <div className="mt-1.5 md:mt-2 text-lg md:text-2xl font-bold text-primary">010-9999-0000</div>
             </div>
             <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-widest">이메일</div>
-              <div className="mt-2 text-lg">sales@heavyseoul.kr</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">이메일</div>
+              <div className="mt-1.5 md:mt-2 text-sm md:text-lg">sales@heavyseoul.kr</div>
             </div>
             <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-widest">본사</div>
-              <div className="mt-2 text-lg">서울특별시 강남구 테헤란로 123</div>
+              <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-widest">본사</div>
+              <div className="mt-1.5 md:mt-2 text-sm md:text-lg">서울특별시 강남구 테헤란로 123</div>
             </div>
           </div>
         </div>
@@ -48,9 +48,9 @@ function ContactPage() {
             e.preventDefault();
             setSent(true);
           }}
-          className="rounded-xl border border-border bg-card p-8 md:p-10 space-y-5"
+          className="rounded-xl border border-border bg-card p-5 md:p-10 space-y-4 md:space-y-5"
         >
-          <h2 className="font-display text-2xl font-bold">문의하기</h2>
+          <h2 className="font-display text-lg md:text-2xl font-bold">문의하기</h2>
           {[
             { l: "성함", n: "name" },
             { l: "회사명", n: "company" },

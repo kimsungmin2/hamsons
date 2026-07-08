@@ -216,18 +216,18 @@ function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.70_0.20_45/0.18),transparent_60%)]" />
         <div className="absolute inset-0 bg-black/30" />
       </div>
-      <div className="container-x pt-32 pb-28 md:pt-44 md:pb-40">
+      <div className="container-x pt-24 pb-16 md:pt-44 md:pb-40">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Rental · New · Used
           </div>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold text-balance leading-[1.05]">
+          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
             <span className="whitespace-nowrap">다양한 현장에 필요한 장비,</span>
             <br />
             <span className="text-primary">한 번의 상담으로.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base md:text-lg text-foreground/75 leading-relaxed">
+          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-foreground/75 leading-relaxed">
             단기 렌탈, 신차 견적, 중고 매매까지
             <br className="hidden md:block" />
             함손건설기계는 다양한 위치에서 현장을 책임지고 있습니다.
@@ -240,11 +240,11 @@ function Hero() {
 
 function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
   return (
-    <section id="plans" className="container-x py-24 md:py-32">
-      <div className="max-w-2xl mb-14">
+    <section id="plans" className="container-x py-14 md:py-32">
+      <div className="max-w-2xl mb-8 md:mb-14">
         <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Our Services</p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">렌탈 · 신차 · 중고</h2>
-        <p className="mt-4 text-muted-foreground leading-relaxed">
+        <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">렌탈 · 신차 · 중고</h2>
+        <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
           현장에 필요한 장비를 가장 합리적인 방식으로. 세 가지 서비스를 한 번의 상담으로 안내드립니다.
         </p>
       </div>
@@ -252,19 +252,19 @@ function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
       <div className="grid md:grid-cols-3 gap-5">
         {plans.map((p, i) => (
           <Reveal key={p.key} delay={i * 80}>
-            <article className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card hover:-translate-y-1 shadow-card flex flex-col">
+            <article className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-5 md:p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card hover:-translate-y-1 shadow-card flex flex-col">
               <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
+                <div className="grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
                   <p.icon className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-muted-foreground">
                   {p.eyebrow}
                 </span>
               </div>
-              <h3 className="mt-6 font-display text-2xl font-bold">{p.name}</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
-              <ul className="mt-6 space-y-2.5 border-t border-border/60 pt-5 flex-1">
+              <h3 className="mt-4 md:mt-6 font-display text-lg md:text-2xl font-bold">{p.name}</h3>
+              <p className="mt-2 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
+              <ul className="mt-4 md:mt-6 space-y-2 md:space-y-2.5 border-t border-border/60 pt-4 md:pt-5 flex-1">
                 {p.points.map((pt) => (
                   <li key={pt} className="flex items-start gap-2.5 text-sm text-foreground/85">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -273,7 +273,7 @@ function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
                 ))}
               </ul>
 
-              <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="mt-5 md:mt-8 grid grid-cols-2 gap-2 md:gap-3">
                 {p.key === "rental" && (
                   <>
                     <button
@@ -334,13 +334,13 @@ function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
 function Process() {
   return (
     <section className="relative border-y border-border/60 bg-surface/40">
-      <div className="container-x py-24 md:py-32">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+      <div className="container-x py-14 md:py-32">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-8 md:mb-14">
           <div className="max-w-2xl">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Process</p>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">문의 절차</h2>
+            <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">문의 절차</h2>
           </div>
-          <p className="max-w-md text-muted-foreground leading-relaxed">
+          <p className="max-w-md text-sm md:text-base text-muted-foreground leading-relaxed">
             상담부터 사후 지원까지, 5단계의 투명한 프로세스로 진행됩니다.
           </p>
         </div>
@@ -349,18 +349,18 @@ function Process() {
           <div className="absolute left-0 right-0 top-7 hidden lg:block">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
           </div>
-          <ol className="grid gap-8 lg:grid-cols-5">
+          <ol className="grid gap-6 md:gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {processSteps.map((s, i) => (
               <Reveal key={s.n} delay={i * 100}>
                 <li className="relative">
-                  <div className="relative grid h-14 w-14 place-items-center rounded-full border border-border/70 bg-background font-display text-sm font-bold text-primary shadow-card">
+                  <div className="relative grid h-10 w-10 md:h-14 md:w-14 place-items-center rounded-full border border-border/70 bg-background font-display text-xs md:text-sm font-bold text-primary shadow-card">
                     {s.n}
                   </div>
-                  <div className="mt-5 flex items-center gap-2">
-                    <s.icon className="h-4 w-4 text-primary" />
-                    <h3 className="font-display text-lg font-bold">{s.t}</h3>
+                  <div className="mt-3 md:mt-5 flex items-center gap-2">
+                    <s.icon className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />
+                    <h3 className="font-display text-sm md:text-lg font-bold">{s.t}</h3>
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                  <p className="mt-1.5 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
                 </li>
               </Reveal>
             ))}
@@ -373,31 +373,31 @@ function Process() {
 
 function Strengths() {
   return (
-    <section className="container-x py-24 md:py-32">
-      <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14 items-start">
+    <section className="container-x py-14 md:py-32">
+      <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 md:gap-14 items-start">
         <div className="lg:sticky lg:top-28">
           <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Why 함손건설기계</p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold leading-[1.1]">
+          <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold leading-[1.1]">
             현장이 선택하는
             <br />
             <span className="text-primary">통합 장비 파트너.</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
+          <p className="mt-3 md:mt-6 text-sm md:text-base text-muted-foreground leading-relaxed">
             단순 임대를 넘어, 운영·정비·재구매까지 함께 설계합니다. 한 번의 상담으로 신차·중고·렌탈을 모두 안내받을 수
             있습니다.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
           {strengths.map((s, i) => (
             <Reveal key={s.t} delay={i * 80}>
-              <div className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card">
+              <div className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-4 md:p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card">
                 <div className="flex items-start justify-between">
-                  <span className="font-display text-4xl font-bold text-primary">{s.k}</span>
+                  <span className="font-display text-2xl md:text-4xl font-bold text-primary">{s.k}</span>
                   <s.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
                 </div>
-                <h3 className="mt-6 font-display text-lg font-bold">{s.t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                <h3 className="mt-3 md:mt-6 font-display text-sm md:text-lg font-bold">{s.t}</h3>
+                <p className="mt-1 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
               </div>
             </Reveal>
           ))}
@@ -409,19 +409,19 @@ function Strengths() {
 
 function FinalCta() {
   return (
-    <section className="container-x pb-28 md:pb-36">
-      <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-card via-surface to-background p-10 md:p-16">
+    <section className="container-x pb-16 md:pb-36">
+      <div className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/70 bg-gradient-to-br from-card via-surface to-background p-6 md:p-16">
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+        <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
           <div className="max-w-2xl">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p>
-            <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-[1.05]">
+            <h2 className="mt-3 md:mt-4 font-display text-2xl md:text-6xl font-bold leading-[1.1] md:leading-[1.05]">
               원하는 장비를
               <br />
               빠르게 찾고 계신가요?
             </h2>
-            <p className="mt-6 text-base md:text-lg text-foreground/75 leading-relaxed">
+            <p className="mt-3 md:mt-6 text-sm md:text-lg text-foreground/75 leading-relaxed">
               렌탈, 신차, 중고까지 한 번에 상담받아보세요. 24시간 내 담당자가 회신드립니다.
             </p>
           </div>
