@@ -92,7 +92,8 @@ function ProductDetail() {
               <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-white/85">{product.shortDesc}</p>
               <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-2 md:gap-3">
                 <Link
-                  to="/contact"
+                  to="/"
+                  hash="contact"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-4 md:px-6 py-2.5 md:py-3.5 text-xs md:text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
                 >
                   구매·렌탈 문의 →
