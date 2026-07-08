@@ -68,7 +68,7 @@ function ProductDetail() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/90" />
-        <div className="relative z-10 container-x flex h-full flex-col justify-end pb-10 md:pb-20 pt-24 md:pt-32 text-white">
+        <div className="relative z-10 container-x flex h-full flex-col justify-end pb-10 md:pb-20 pt-32 md:pt-32 text-white">
           <div className="grid lg:grid-cols-12 gap-6 md:gap-10 items-end">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
