@@ -193,28 +193,28 @@ function AboutPage() {
         {/* Glass pill tabs */}
         <nav
           aria-label="계열사 카테고리"
-          className="sticky top-16 z-30 -mx-6 px-6 mb-8 md:mb-12 py-2.5 md:py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 bg-background/85 border-y border-border/70 overflow-x-auto"
+          className="sticky top-16 z-30 -mx-6 px-6 mb-8 md:mb-12 py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/90 bg-background/90 border-y border-border/80 shadow-md"
         >
-          <ul className="flex justify-start gap-1.5 md:gap-3">
+          <ul className="grid grid-cols-2 md:grid-cols-5 w-full gap-2 md:gap-3">
             {navItems.map((n, i) => {
               const isActive = activeId === n.id;
               return (
-                <li key={n.id}>
+                <li key={n.id} className={i === 4 ? "col-span-2 md:col-span-1" : "col-span-1"}>
                   <a
                     href={`#${n.id}`}
                     onClick={(e) => handleNavClick(e, n.id)}
-                    className={`inline-flex items-center gap-1.5 md:gap-2 rounded-full border px-3 md:px-6 py-2 md:py-2.5 text-xs md:text-sm font-semibold whitespace-nowrap transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 ${
+                    className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2.5 text-xs md:text-sm font-bold tracking-tight transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 w-full text-center ${
                       isActive
-                        ? "border-primary/70 bg-primary text-primary-foreground shadow-glow"
-                        : "border-border/70 bg-white/[0.03] text-foreground/80 backdrop-blur hover:border-primary/40 hover:text-foreground hover:bg-white/[0.06]"
+                        ? "border-primary bg-primary text-primary-foreground shadow-glow scale-[1.02]"
+                        : "border-border bg-white/[0.03] text-foreground/80 hover:border-primary/50 hover:text-foreground hover:bg-white/[0.08]"
                     }`}
                   >
                     <span
-                      className={`text-[10px] font-mono tracking-widest ${isActive ? "text-primary-foreground/70" : "text-muted-foreground"}`}
+                      className={`text-[10px] font-mono tracking-widest shrink-0 ${isActive ? "text-primary-foreground/80" : "text-primary"}`}
                     >
                       0{i + 1}
                     </span>
-                    {n.label}
+                    <span className="truncate">{n.label}</span>
                   </a>
                 </li>
               );
