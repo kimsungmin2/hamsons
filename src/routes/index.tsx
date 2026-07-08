@@ -121,23 +121,23 @@ function Index() {
       </section>
 
       {/* PRODUCT SHOWCASE */}
-      <section className="py-28">
+      <section className="py-14 md:py-28">
         <div className="container-x">
-          <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
             <div>
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase">01 / Products</p>
-              <h2 className="mt-2 text-4xl md:text-5xl font-bold text-balance max-w-2xl">
+              <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">01 / Products</p>
+              <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance max-w-2xl">
                 강력한 성능
                 <br />
                 밥캣 중장비 라인업
               </h2>
             </div>
-            <Link to="/products" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link to="/products" className="text-xs md:text-sm text-muted-foreground hover:text-foreground">
               전체 제품 보기 →
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {products.map((p, i) => (
               <motion.div
                 key={p.name}
@@ -160,10 +160,10 @@ function Index() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <div className="text-xs text-primary font-mono">{p.code}</div>
-                    <h3 className="mt-1 text-xl font-bold">{p.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{p.spec}</p>
+                  <div className="p-3 md:p-6">
+                    <div className="text-[10px] md:text-xs text-primary font-mono">{p.code}</div>
+                    <h3 className="mt-0.5 md:mt-1 text-sm md:text-xl font-bold">{p.name}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">{p.spec}</p>
                   </div>
                 </Link>
               </motion.div>
@@ -173,24 +173,24 @@ function Index() {
       </section>
 
       {/* RENTAL */}
-      <section className="py-28 bg-[color:var(--surface)]">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 md:py-28 bg-[color:var(--surface)]">
+        <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <img src={rental} alt="렌탈 장비" loading="lazy" className="h-full w-full object-cover" />
           </div>
           <div>
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase">02 / Rental & Used</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-balance">
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">02 / Rental & Used</p>
+            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               강력한 성능을 가진 밥캣을,
               <br />
               필요한 기간만큼.
             </h2>
-            <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
               단기 1일 렌탈부터 검수를 마친 중고 장비 매매까지. 현장 상황에 맞춘 가장 합리적인 선택을 제공해드립니다.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
               {["전 장비 완벽 정비 후 출고", "당일 운송·회수 가능 (운송비 별도)", "보험·정비 패키지 포함"].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-sm">
+                <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {t}
                 </li>
@@ -198,7 +198,7 @@ function Index() {
             </ul>
             <Link
               to="/rental"
-              className="mt-10 inline-flex items-center rounded-md border border-border px-6 py-3 text-sm font-semibold hover:bg-secondary transition"
+              className="mt-6 md:mt-10 inline-flex items-center rounded-md border border-border px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-semibold hover:bg-secondary transition"
             >
               렌탈·중고 라인업 보기
             </Link>
@@ -207,21 +207,21 @@ function Index() {
       </section>
 
       {/* SERVICE */}
-      <section className="py-28">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 md:py-28">
+        <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase">03 / Service</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-balance">
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">03 / Service</p>
+            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               빠르고 정확하게
               <br />
               순정 부품을 활용한 정비.
             </h2>
-            <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
               순정 부품과 인증 밥캣 정비사가 현장이 멈추지 않도록 빠르고 정확한 서비스를 진행해드립니다.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
               {["전남 / 영남 정비 거점 운영", "100% 순정 부품 · 서비스 후 일정기간 부품 보증"].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-sm">
+                <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {t}
                 </li>
@@ -229,7 +229,7 @@ function Index() {
             </ul>
             <Link
               to="/service"
-              className="mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
+              className="mt-6 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-4 md:px-6 py-2.5 md:py-3.5 text-xs md:text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
             >
               정비 서비스 자세히 →
             </Link>
@@ -253,8 +253,8 @@ function Index() {
       </section>
 
       {/* COMPANY */}
-      <section className="py-28 bg-[color:var(--surface)]">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 md:py-28 bg-[color:var(--surface)]">
+        <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* TODO: replace COMPANY_YOUTUBE_ID with the provided YouTube video ID */}
           <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/60 shadow-card backdrop-blur">
             <iframe
@@ -267,15 +267,15 @@ function Index() {
             />
           </div>
           <div>
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase">04 / Company</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-balance">2005년부터, 한결같이.</h2>
-            <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">04 / Company</p>
+            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">2005년부터, 한결같이.</h2>
+            <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
               20년 이상 대한민국 축산·건설 현장과 함께해 온 함손건설기계는 글로벌 소형 건설기계 브랜드 밥캣의 공식
               파트너이자, 국내 스키드로더 최대 규모의 서비스 기업입니다.
             </p>
             <Link
               to="/about"
-              className="mt-10 inline-flex items-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
+              className="mt-6 md:mt-10 inline-flex items-center rounded-md bg-primary px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
             >
               회사 소개 자세히 →
             </Link>
@@ -284,22 +284,22 @@ function Index() {
       </section>
 
       {/* SHOP — Bobcat Genuine Parts */}
-      <section id="shop" className="py-28">
-        <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
+      <section id="shop" className="py-14 md:py-28">
+        <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <p className="text-primary text-sm font-semibold tracking-widest uppercase">05 / Shop</p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold text-balance">
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">05 / Shop</p>
+            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               밥캣 정품 부품
               <br />
               전문 쇼핑몰.
             </h2>
-            <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
+            <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
               빠른 부품 공급과 신뢰할 수 있는 정품 부품 서비스. 다양한 중장비 부품을 온라인으로 간편하게 확인하고,
               검증된 공식 유통망을 통해 안심하고 주문하실 수 있습니다.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
               {["100% 밥캣 정품 부품 보증", "전국 당일·익일 배송 네트워크", "전문 엔지니어 상담 지원"].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-sm">
+                <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {t}
                 </li>
@@ -309,7 +309,7 @@ function Index() {
               href="https://hamson.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
+              className="mt-6 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-4 md:px-6 py-2.5 md:py-3.5 text-xs md:text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
             >
               쇼핑몰 바로가기 ↗
             </a>
@@ -410,7 +410,7 @@ function ContactCTASection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 bg-[color:var(--surface)] scroll-mt-20">
+    <section id="contact" className="relative overflow-hidden py-14 md:py-28 bg-[color:var(--surface)] scroll-mt-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[880px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
@@ -420,23 +420,23 @@ function ContactCTASection() {
         className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:64px_64px]"
       />
       <div className="container-x relative">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
           {/* LEFT: headline + channels */}
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-widest uppercase text-primary">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Contact
             </span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance">
+            <h2 className="mt-4 md:mt-6 font-display text-2xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance">
               장비 상담이
               <br />
               <span className="text-primary">필요하신가요?</span>
             </h2>
-            <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-3 md:mt-6 max-w-xl text-sm md:text-lg text-muted-foreground leading-relaxed">
               신차, 렌탈, 중고, 정비까지 현장에 맞는 장비 솔루션을 빠르게 안내해드립니다.
             </p>
 
-            <div className="mt-10 grid sm:grid-cols-2 gap-3">
+            <div className="mt-6 md:mt-10 grid sm:grid-cols-2 gap-2.5 md:gap-3">
               {contactChannels.map((c) => {
                 const Icon = c.icon;
                 return (
@@ -445,16 +445,16 @@ function ContactCTASection() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group relative flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition hover:border-primary/40 hover:bg-white/[0.06]"
+                    className="group relative flex items-start gap-3 md:gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-3.5 md:p-5 backdrop-blur-sm transition hover:border-primary/40 hover:bg-white/[0.06]"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-primary/10 text-primary transition group-hover:bg-primary/20">
-                      <Icon className="h-5 w-5" />
+                    <span className="flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-primary/10 text-primary transition group-hover:bg-primary/20">
+                      <Icon className="h-4 w-4 md:h-5 md:w-5" />
                     </span>
                     <div className="min-w-0">
                       <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                         {c.label}
                       </div>
-                      <div className="mt-1 font-display text-base font-bold text-foreground truncate">{c.value}</div>
+                      <div className="mt-0.5 md:mt-1 font-display text-sm md:text-base font-bold text-foreground truncate">{c.value}</div>
                       <div className="mt-0.5 text-xs text-muted-foreground truncate">{c.desc}</div>
                     </div>
                     <span className="absolute right-4 top-4 text-muted-foreground transition group-hover:text-primary group-hover:translate-x-0.5">
