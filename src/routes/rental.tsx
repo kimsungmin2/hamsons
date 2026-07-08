@@ -18,6 +18,8 @@ import {
   FileText,
   Handshake,
   LifeBuoy,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import rentalHero from "@/assets/rental-hero.png";
 import s590 from "@/assets/products/S590-main.png";
@@ -239,6 +241,21 @@ function Hero() {
 }
 
 function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    // 모바일 뷰포트 크기에 비례하여 스크롤 이동
+    const scrollAmount = container.clientWidth * 0.85;
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="plans" className="container-x py-14 md:py-32">
       <div className="max-w-2xl mb-8 md:mb-14">
@@ -249,83 +266,110 @@ function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-5">
-        {plans.map((p, i) => (
-          <Reveal key={p.key} delay={i * 80}>
-            <article className="group relative h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-5 md:p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card hover:-translate-y-1 shadow-card flex flex-col">
-              <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="flex items-center justify-between">
-                <div className="grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
-                  <p.icon className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-muted-foreground">
-                  {p.eyebrow}
-                </span>
-              </div>
-              <h3 className="mt-4 md:mt-6 font-display text-lg md:text-2xl font-bold">{p.name}</h3>
-              <p className="mt-2 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
-              <ul className="mt-4 md:mt-6 space-y-2 md:space-y-2.5 border-t border-border/60 pt-4 md:pt-5 flex-1">
-                {p.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
+      <div className="relative">
+        {/* 모바일 전용 이전 버튼 (좌측 중앙 - 스크롤바 패딩 보정 및 바깥으로 이동) */}
+        <button
+          type="button"
+          onClick={() => handleScroll("left")}
+          className="absolute -left-2 top-[calc(50%-12px)] -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white backdrop-blur shadow-lg transition active:bg-secondary active:scale-90 md:hidden"
+          aria-label="이전 서비스"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
 
-              <div className="mt-5 md:mt-8 grid grid-cols-2 gap-2 md:gap-3">
-                {p.key === "rental" && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={onOpenEquipment}
-                      className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
-                    >
-                      장비 정보
-                    </button>
-                    <ContactButton
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
-                    >
-                      상담신청
-                    </ContactButton>
-                  </>
-                )}
-                {p.key === "new" && (
-                  <>
-                    <Link
-                      to="/products"
-                      className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
-                    >
-                      신차 정보
-                    </Link>
-                    <ContactButton
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
-                    >
-                      상담신청
-                    </ContactButton>
-                  </>
-                )}
-                {p.key === "used" && (
-                  <>
-                    <a
-                      href="https://hamson.co.kr/product/list.html?cate_no=205"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
-                    >
-                      쇼핑몰
-                    </a>
-                    <ContactButton
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
-                    >
-                      상담신청
-                    </ContactButton>
-                  </>
-                )}
-              </div>
-            </article>
-          </Reveal>
+        {/* 모바일 전용 다음 버튼 (우측 중앙 - 스크롤바 패딩 보정 및 바깥으로 이동) */}
+        <button
+          type="button"
+          onClick={() => handleScroll("right")}
+          className="absolute -right-2 top-[calc(50%-12px)] -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white backdrop-blur shadow-lg transition active:bg-secondary active:scale-90 md:hidden"
+          aria-label="다음 서비스"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory pb-6 md:pb-0 px-6 md:px-0 no-scrollbar scroll-smooth"
+        >
+        {plans.map((p, i) => (
+          <div key={p.key} className="shrink-0 snap-center w-[80vw] md:w-full h-full">
+            <Reveal delay={i * 80} className="w-full h-full flex flex-col">
+              <article className="group relative w-full h-full overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-5 md:p-7 backdrop-blur transition-all duration-300 hover:border-primary/50 hover:bg-card shadow-card flex flex-col flex-1">
+                <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="flex items-center justify-between">
+                  <div className="grid h-10 w-10 md:h-12 md:w-12 place-items-center rounded-xl bg-gradient-orange shadow-glow">
+                    <p.icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+                    {p.eyebrow}
+                  </span>
+                </div>
+                <h3 className="mt-4 md:mt-6 font-display text-lg md:text-2xl font-bold">{p.name}</h3>
+                <p className="mt-2 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">{p.tagline}</p>
+                <ul className="mt-4 md:mt-6 space-y-2 md:space-y-2.5 border-t border-border/60 pt-4 md:pt-5 flex-1">
+                  {p.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-sm text-foreground/85">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5 md:mt-8 grid grid-cols-2 gap-2 md:gap-3">
+                  {p.key === "rental" && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={onOpenEquipment}
+                        className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
+                      >
+                        장비 정보
+                      </button>
+                      <ContactButton
+                        className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
+                      >
+                        상담신청
+                      </ContactButton>
+                    </>
+                  )}
+                  {p.key === "new" && (
+                    <>
+                      <Link
+                        to="/products"
+                        className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
+                      >
+                        신차 정보
+                      </Link>
+                      <ContactButton
+                        className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
+                      >
+                        상담신청
+                      </ContactButton>
+                    </>
+                  )}
+                  {p.key === "used" && (
+                    <>
+                      <a
+                        href="https://hamson.co.kr/product/list.html?cate_no=205"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-md border-2 border-border/80 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition hover:border-primary/60 hover:bg-white/[0.06]"
+                      >
+                        쇼핑몰
+                      </a>
+                      <ContactButton
+                        className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 cursor-pointer"
+                      >
+                        상담신청
+                      </ContactButton>
+                    </>
+                  )}
+                </div>
+              </article>
+            </Reveal>
+          </div>
         ))}
+      </div>
       </div>
     </section>
   );
@@ -445,7 +489,15 @@ function FinalCta() {
   );
 }
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -470,8 +522,8 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`transition-all duration-700 ease-out ${
-        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
+        shown ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-6 opacity-100 translate-y-0"
+      } ${className}`}
     >
       {children}
     </div>
