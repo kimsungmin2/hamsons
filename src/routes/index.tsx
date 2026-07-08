@@ -436,8 +436,8 @@ function ContactCTASection() {
               신차, 렌탈, 중고, 정비까지 현장에 맞는 장비 솔루션을 빠르게 안내해드립니다.
             </p>
 
-            <div className="mt-6 md:mt-10 grid sm:grid-cols-2 gap-2.5 md:gap-3">
-              {contactChannels.map((c) => {
+            <div className="mt-6 md:mt-10 grid grid-cols-2 gap-2 md:gap-3">
+              {contactChannels.map((c, i) => {
                 const Icon = c.icon;
                 return (
                   <a
@@ -445,7 +445,9 @@ function ContactCTASection() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group relative flex items-start gap-3 md:gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-3.5 md:p-5 backdrop-blur-sm transition hover:border-primary/40 hover:bg-white/[0.06]"
+                    className={`group relative flex items-start gap-3 md:gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 md:p-5 backdrop-blur-sm transition hover:border-primary/40 hover:bg-white/[0.06] ${
+                      i === 4 ? "col-span-2 sm:col-span-1" : "col-span-1"
+                    }`}
                   >
                     <span className="flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-primary/10 text-primary transition group-hover:bg-primary/20">
                       <Icon className="h-4 w-4 md:h-5 md:w-5" />
@@ -457,7 +459,7 @@ function ContactCTASection() {
                       <div className="mt-0.5 md:mt-1 font-display text-sm md:text-base font-bold text-foreground truncate">{c.value}</div>
                       <div className="mt-0.5 text-xs text-muted-foreground truncate">{c.desc}</div>
                     </div>
-                    <span className="absolute right-4 top-4 text-muted-foreground transition group-hover:text-primary group-hover:translate-x-0.5">
+                    <span className="absolute right-3 top-3 md:right-4 md:top-4 text-muted-foreground transition group-hover:text-primary group-hover:translate-x-0.5 text-[10px] md:text-xs">
                       →
                     </span>
                   </a>
