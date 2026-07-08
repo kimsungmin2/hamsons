@@ -21,10 +21,14 @@ export const Route = createFileRoute("/")({
       { title: "함손건설기계 — 소형건설기계의 새로운 기준" },
       {
         name: "description",
-        content: "스키드로더 / 미니 굴착기 / 컴팩트 휠 로더 판매·렌탈·정비. 대한민국 축산·건설 현장의 든든한 파트너.",
+        content:
+          "스키드로더 / 미니 굴착기 / 컴팩트 휠 로더 판매·렌탈·정비. 대한민국 축산·건설 현장의 든든한 파트너.",
       },
       { property: "og:title", content: "함손건설기계 — 소형건설기계의 새로운 기준" },
-      { property: "og:description", content: "스키드로더 / 미니 굴착기 / 컴팩트 휠 로더 판매·렌탈·정비를 한 곳에서" },
+      {
+        property: "og:description",
+        content: "스키드로더 / 미니 굴착기 / 컴팩트 휠 로더 판매·렌탈·정비를 한 곳에서",
+      },
     ],
   }),
   component: Index,
@@ -93,8 +97,8 @@ function Index() {
               <span className="text-primary"> 움직이는 힘.</span>
             </h1>
             <p className="mt-3 sm:mt-6 max-w-xl text-xs sm:text-base md:text-lg text-white/85 leading-relaxed sm:leading-normal">
-              대한민국 축산·건설 현장의 든든한 파트너. 스키드로더 / 미니 굴착기 / 컴팩트 휠 로더까지 밥캣 중장비의
-              시작과 끝을 담당하고 있습니다.
+              대한민국 축산·건설 현장의 든든한 파트너. 스키드로더 / 미니 굴착기 / 컴팩트 휠 로더까지
+              밥캣 중장비의 시작과 끝을 담당하고 있습니다.
             </p>
             <div className="mt-6 sm:mt-10 flex flex-row items-center gap-2 sm:gap-3">
               <Link
@@ -111,8 +115,12 @@ function Index() {
                   <Phone className="h-3 w-3 md:h-4 md:w-4" />
                 </span>
                 <span className="flex flex-col text-left leading-none justify-center">
-                  <span className="hidden md:inline text-[10px] font-semibold uppercase tracking-[0.15em] text-white/50 mb-0.5">대표번호</span>
-                  <span className="font-display text-[12px] md:text-lg font-bold tracking-wide">1577-7269</span>
+                  <span className="hidden md:inline text-[10px] font-semibold uppercase tracking-[0.15em] text-white/50 mb-0.5">
+                    대표번호
+                  </span>
+                  <span className="font-display text-[12px] md:text-lg font-bold tracking-wide">
+                    1577-7269
+                  </span>
                 </span>
               </a>
             </div>
@@ -125,14 +133,19 @@ function Index() {
         <div className="container-x">
           <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
             <div>
-              <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">01 / Products</p>
+              <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">
+                01 / Products
+              </p>
               <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance max-w-2xl">
                 강력한 성능
                 <br />
                 밥캣 중장비 라인업
               </h2>
             </div>
-            <Link to="/products" className="text-xs md:text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              to="/products"
+              className="text-xs md:text-sm text-muted-foreground hover:text-foreground"
+            >
               전체 제품 보기 →
             </Link>
           </div>
@@ -163,7 +176,9 @@ function Index() {
                   <div className="p-3 md:p-6">
                     <div className="text-[10px] md:text-xs text-primary font-mono">{p.code}</div>
                     <h3 className="mt-0.5 md:mt-1 text-sm md:text-xl font-bold">{p.name}</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">{p.spec}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">
+                      {p.spec}
+                    </p>
                   </div>
                 </Link>
               </motion.div>
@@ -176,20 +191,32 @@ function Index() {
       <section className="py-14 md:py-28 bg-[color:var(--surface)]">
         <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-            <img src={rental} alt="렌탈 장비" loading="lazy" className="h-full w-full object-cover" />
+            <img
+              src={rental}
+              alt="렌탈 장비"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
           <div>
-            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">02 / Rental & Used</p>
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">
+              02 / Rental & Used
+            </p>
             <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               강력한 성능을 가진 밥캣을,
               <br />
               필요한 기간만큼.
             </h2>
             <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
-              단기 1일 렌탈부터 검수를 마친 중고 장비 매매까지. 현장 상황에 맞춘 가장 합리적인 선택을 제공해드립니다.
+              단기 1일 렌탈부터 검수를 마친 중고 장비 매매까지. 현장 상황에 맞춘 가장 합리적인
+              선택을 제공해드립니다.
             </p>
             <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
-              {["전 장비 완벽 정비 후 출고", "당일 운송·회수 가능 (운송비 별도)", "보험·정비 패키지 포함"].map((t) => (
+              {[
+                "전 장비 완벽 정비 후 출고",
+                "당일 운송·회수 가능 (운송비 별도)",
+                "보험·정비 패키지 포함",
+              ].map((t) => (
                 <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {t}
@@ -210,22 +237,27 @@ function Index() {
       <section className="py-14 md:py-28">
         <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">03 / Service</p>
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">
+              03 / Service
+            </p>
             <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               빠르고 정확하게
               <br />
               순정 부품을 활용한 정비.
             </h2>
             <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
-              순정 부품과 인증 밥캣 정비사가 현장이 멈추지 않도록 빠르고 정확한 서비스를 진행해드립니다.
+              순정 부품과 인증 밥캣 정비사가 현장이 멈추지 않도록 빠르고 정확한 서비스를
+              진행해드립니다.
             </p>
             <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
-              {["전남 / 영남 정비 거점 운영", "100% 순정 부품 · 서비스 후 일정기간 부품 보증"].map((t) => (
-                <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  {t}
-                </li>
-              ))}
+              {["전남 / 영남 정비 거점 운영", "100% 순정 부품 · 서비스 후 일정기간 부품 보증"].map(
+                (t) => (
+                  <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                    {t}
+                  </li>
+                ),
+              )}
             </ul>
             <Link
               to="/service"
@@ -267,11 +299,15 @@ function Index() {
             />
           </div>
           <div>
-            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">04 / Company</p>
-            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">2005년부터, 한결같이.</h2>
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">
+              04 / Company
+            </p>
+            <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
+              2005년부터, 한결같이.
+            </h2>
             <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
-              20년 이상 대한민국 축산·건설 현장과 함께해 온 함손건설기계는 글로벌 소형 건설기계 브랜드 밥캣의 공식
-              파트너이자, 국내 스키드로더 최대 규모의 서비스 기업입니다.
+              20년 이상 대한민국 축산·건설 현장과 함께해 온 함손건설기계는 글로벌 소형 건설기계
+              브랜드 밥캣의 공식 파트너이자, 국내 스키드로더 최대 규모의 서비스 기업입니다.
             </p>
             <Link
               to="/about"
@@ -287,18 +323,24 @@ function Index() {
       <section id="shop" className="py-14 md:py-28">
         <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">05 / Shop</p>
+            <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">
+              05 / Shop
+            </p>
             <h2 className="mt-1.5 md:mt-2 text-2xl md:text-5xl font-bold text-balance">
               밥캣 정품 부품
               <br />
               전문 쇼핑몰.
             </h2>
             <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg leading-relaxed">
-              빠른 부품 공급과 신뢰할 수 있는 정품 부품 서비스. 다양한 중장비 부품을 온라인으로 간편하게 확인하고,
-              검증된 공식 유통망을 통해 안심하고 주문하실 수 있습니다.
+              빠른 부품 공급과 신뢰할 수 있는 정품 부품 서비스. 다양한 중장비 부품을 온라인으로
+              간편하게 확인하고, 검증된 공식 유통망을 통해 안심하고 주문하실 수 있습니다.
             </p>
             <ul className="mt-5 md:mt-8 space-y-2 md:space-y-3">
-              {["100% 밥캣 정품 부품 보증", "전국 당일·익일 배송 네트워크", "전문 엔지니어 상담 지원"].map((t) => (
+              {[
+                "100% 밥캣 정품 부품 보증",
+                "전국 당일·익일 배송 네트워크",
+                "전문 엔지니어 상담 지원",
+              ].map((t) => (
                 <li key={t} className="flex items-center gap-2 md:gap-3 text-xs md:text-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   {t}
@@ -339,13 +381,6 @@ function Index() {
 
 const contactChannels = [
   {
-    label: "대표번호",
-    desc: "평일 09:00 – 18:00 상담",
-    value: "1577-7269",
-    href: "tel:+8215777269",
-    icon: Phone,
-  },
-  {
     label: "네이버 블로그",
     desc: "장비 소식 · 현장 사례",
     value: "bobcat920",
@@ -372,6 +407,13 @@ const contactChannels = [
     value: "hamson_bobcat",
     href: "https://www.instagram.com/hamson_bobcat",
     icon: Instagram,
+  },
+  {
+    label: "대표번호",
+    desc: "평일 09:00 – 18:00 상담",
+    value: "1577-7269",
+    href: "tel:+8215777269",
+    icon: Phone,
   },
 ] as const;
 
@@ -410,7 +452,10 @@ function ContactCTASection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-14 md:py-28 bg-[color:var(--surface)] scroll-mt-20">
+    <section
+      id="contact"
+      className="relative overflow-hidden py-14 md:py-28 bg-[color:var(--surface)] scroll-mt-20"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[880px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
@@ -456,7 +501,9 @@ function ContactCTASection() {
                       <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                         {c.label}
                       </div>
-                      <div className="mt-0.5 md:mt-1 font-display text-sm md:text-base font-bold text-foreground truncate">{c.value}</div>
+                      <div className="mt-0.5 md:mt-1 font-display text-sm md:text-base font-bold text-foreground truncate">
+                        {c.value}
+                      </div>
                       <div className="mt-0.5 text-xs text-muted-foreground truncate">{c.desc}</div>
                     </div>
                     <span className="absolute right-3 top-3 md:right-4 md:top-4 text-muted-foreground transition group-hover:text-primary group-hover:translate-x-0.5 text-[10px] md:text-xs">
@@ -564,7 +611,9 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{label}</label>
+      <label className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        {label}
+      </label>
       <input
         type={type}
         name={name}
