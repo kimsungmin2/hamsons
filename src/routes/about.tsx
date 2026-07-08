@@ -193,7 +193,7 @@ function AboutPage() {
         {/* Glass pill tabs */}
         <nav
           aria-label="계열사 카테고리"
-          className="sticky top-16 z-30 -mx-6 px-6 mb-8 md:mb-12 py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/90 bg-background/90 border-y border-border/80 shadow-md"
+          className="hidden md:block sticky top-16 z-30 -mx-6 px-6 mb-8 md:mb-12 py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-background/90 bg-background/90 border-y border-border/80 shadow-md"
         >
           <ul className="grid grid-cols-2 md:grid-cols-5 w-full gap-2 md:gap-3">
             {navItems.map((n, i) => {
