@@ -10,15 +10,15 @@ export function Footer() {
             <span className="font-display text-xl md:text-2xl font-bold text-foreground">함손건설기계</span>
           </div>
           <p className="mt-3 md:mt-4 text-xs md:text-sm text-muted-foreground max-w-sm">
-            대한민국 축산, 건설 현장의 동반자 스키드로더, 굴착기, 휠로더등 밥캣 중장비 신차, 렌탈, 정비를 한 곳에서.
+            대한민국 축산 건설 현장의 동반자 스키드로더, 굴착기, 휠로더 등 밥캣 중장비 신차, 렌탈, 정비를 한 곳에서.
           </p>
         </div>
         <div>
           <h4 className="text-sm font-semibold mb-3">본사</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            전라남도 나주시 왕곡면 장산양산길 18
+            전남광주통합특별시 나주시 왕곡면 장산양산길 18
             <br />
-            평일 08:00 ~ 18:00
+            평일 08:00 ~ 18:00 (점심시간 11:30 ~ 13:00)
             <br />
             토요일 08:00 ~ 17:00
           </p>
