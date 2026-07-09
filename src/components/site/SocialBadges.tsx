@@ -66,17 +66,9 @@ export function SocialBadges({ variant = "compact", className = "" }: { variant?
               target="_blank"
               rel="noopener noreferrer"
               aria-label={b.label}
-              className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-300 hover:-translate-y-0.5 ${
-                isKakao
-                  ? "border-primary/50 bg-primary/15 text-primary hover:bg-primary/25 hover:shadow-glow"
-                  : "border-border bg-card text-foreground/85 hover:border-primary/40 hover:text-foreground"
-              }`}
+              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground/85 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground"
             >
-              <span
-                className={`flex h-5 w-5 items-center justify-center rounded-full ${
-                  isKakao ? "bg-primary/25" : "bg-[color:var(--surface)]"
-                }`}
-              >
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--surface)]">
                 {b.icon}
               </span>
               <span>{isKakao ? "카카오톡 상담하기" : b.label}</span>
@@ -118,7 +110,6 @@ export function SocialBadges({ variant = "compact", className = "" }: { variant?
       <div className={`fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 md:flex ${className}`} aria-label="빠른 연결">
         <div className="flex flex-col items-stretch gap-3 rounded-full border border-white/12 bg-black/60 p-2.5 backdrop-blur-xl shadow-card">
           {BADGES.map((b) => {
-            const isKakao = b.key === "kakao";
             return (
               <a
                 key={b.key}
@@ -126,11 +117,7 @@ export function SocialBadges({ variant = "compact", className = "" }: { variant?
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={b.label}
-                className={`group relative inline-flex h-14 w-14 items-center justify-center rounded-full border text-base transition-all duration-300 hover:-translate-x-1 hover:scale-105 ${
-                  isKakao
-                    ? "border-primary/55 bg-primary/15 text-primary hover:bg-primary/30 hover:shadow-glow"
-                    : "border-white/12 bg-white/5 text-white/85 hover:border-primary/55 hover:bg-primary/15 hover:text-primary"
-                }`}
+                className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/12 bg-white/5 text-base text-white/85 transition-all duration-300 hover:-translate-x-1 hover:scale-105 hover:border-primary/55 hover:bg-primary/15 hover:text-primary"
               >
                 <span className="[&>svg]:h-5 [&>svg]:w-5 [&>span]:text-[15px]">{b.icon}</span>
                 <span className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-md border border-white/10 bg-black/85 px-3 py-1.5 text-xs font-medium text-white opacity-0 backdrop-blur-md transition-opacity duration-200 group-hover:opacity-100">
