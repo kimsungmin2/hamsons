@@ -105,7 +105,7 @@ const plans = [
   {
     key: "rental",
     icon: CalendarClock,
-    eyebrow: "Short-term Rental",
+    // eyebrow: "Short-term Rental",
     name: "단기 렌탈",
     tagline: "1일 단위 즉시 투입 가능한 검증된 장비.",
     points: ["1일 ~ 1개월 유연 운영", "기본 보험·점검 포함"],
@@ -113,7 +113,7 @@ const plans = [
   {
     key: "new",
     icon: Sparkles,
-    eyebrow: "New Equipment",
+    // eyebrow: "New Equipment",
     name: "신차 문의",
     tagline: "최신 모델 라인업과 맞춤 견적 상담.",
     points: ["정품 신차 라인업", "맞춤 사양·견적", "전문 상담사 1:1"],
@@ -121,7 +121,7 @@ const plans = [
   {
     key: "used",
     icon: Tag,
-    eyebrow: "Certified Used",
+    // eyebrow: "Certified Used",
     name: "중고 매매",
     tagline: "정밀 검수를 거친 신뢰할 수 있는 중고 장비.",
     points: ["6개월 무상 보증", "출고 전 소모품 교환"],
@@ -220,10 +220,10 @@ function Hero() {
       </div>
       <div className="container-x pt-24 pb-16 md:pt-44 md:pb-40">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
+          {/* <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Rental · New · Used
-          </div>
+          </div> */}
           <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
             <span className="whitespace-nowrap">다양한 현장에 필요한 장비,</span>
             <br />
@@ -259,7 +259,7 @@ function Plans({ onOpenEquipment }: { onOpenEquipment: () => void }) {
   return (
     <section id="plans" className="container-x py-14 md:py-32">
       <div className="max-w-2xl mb-8 md:mb-14">
-        <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Our Services</p>
+        {/* <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Our Services</p> */}
         <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">렌탈 · 신차 · 중고</h2>
         <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
           현장에 필요한 장비를 가장 합리적인 방식으로. 세 가지 서비스를 한 번의 상담으로 안내드립니다.
@@ -381,7 +381,7 @@ function Process() {
       <div className="container-x py-14 md:py-32">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-8 md:mb-14">
           <div className="max-w-2xl">
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Process</p>
+            {/* <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Process</p> */}
             <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">문의 절차</h2>
           </div>
           <p className="max-w-md text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -459,7 +459,7 @@ function FinalCta() {
         <div className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
           <div className="max-w-2xl">
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p>
+            {/* <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p> */}
             <h2 className="mt-3 md:mt-4 font-display text-2xl md:text-6xl font-bold leading-[1.1] md:leading-[1.05]">
               원하는 장비를
               <br />

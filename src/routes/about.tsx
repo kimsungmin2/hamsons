@@ -229,9 +229,9 @@ function AboutPage() {
               <article key={co.name} id={`aff-${idx}`} className="scroll-mt-32 group animate-fade-in">
                 {/* Group label + accent line */}
                 <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                  <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] text-primary">
+                  {/* <span className="font-mono text-[10px] md:text-xs tracking-[0.4em] text-primary">
                     GROUP {String(idx + 1).padStart(2, "0")}
-                  </span>
+                  </span> */}
                   <span className="h-px flex-1 bg-gradient-to-r from-primary/60 via-border to-transparent" />
                 </div>
 
@@ -255,9 +255,9 @@ function AboutPage() {
                         {/* Meta */}
                         <dl className="mt-5 md:mt-8 space-y-4 md:space-y-5">
                           <div className="flex items-start gap-3 md:gap-4">
-                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                            {/* <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <MapPin className="h-4 w-4 text-primary" />
-                            </span>
+                            </span> */}
                             <div className="flex-1">
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">주소</dt>
                               <dd className="mt-1 text-xs md:text-[15px] text-foreground">
@@ -296,9 +296,9 @@ function AboutPage() {
                           </div>
 
                           <div className="flex items-start gap-3 md:gap-4">
-                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                            {/* <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Phone className="h-4 w-4 text-primary" />
-                            </span>
+                            </span> */}
                             <div>
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                                 대표번호
@@ -314,9 +314,9 @@ function AboutPage() {
                             </div>
                           </div>
                           <div className="flex items-start gap-3 md:gap-4">
-                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                            {/* <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Printer className="h-4 w-4 text-primary" />
-                            </span>
+                            </span> */}
                             <div>
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">FAX</dt>
                               <dd className="mt-1 text-xs md:text-[15px] font-semibold tracking-wide text-foreground">
@@ -325,9 +325,9 @@ function AboutPage() {
                             </div>
                           </div>
                           <div className="flex items-start gap-3 md:gap-4">
-                            <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
+                            {/* <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <Briefcase className="h-4 w-4 text-primary" />
-                            </span>
+                            </span> */}
                             <div>
                               <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                                 주요 사업 분야
@@ -363,9 +363,9 @@ function AboutPage() {
                           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
-                        <span className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-background/60 px-3 py-1 text-[11px] font-mono tracking-widest text-foreground/90 backdrop-blur">
+                        {/* <span className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-background/60 px-3 py-1 text-[11px] font-mono tracking-widest text-foreground/90 backdrop-blur">
                           0{idx + 1} / 0{affiliates.length}
-                        </span>
+                        </span> */}
                       </div>
                       <a
                         href={`https://map.naver.com/p/search/${encodeURIComponent(co.address)}`}

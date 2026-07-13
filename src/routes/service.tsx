@@ -114,7 +114,7 @@ function CoreCards() {
   return (
     <section className="container-x py-14 md:py-32">
       <div className="max-w-2xl mb-8 md:mb-14">
-        <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Core Services</p>
+        {/* <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Core Services</p> */}
         <h2 className="mt-2 md:mt-3 font-display text-2xl md:text-5xl font-bold">핵심 정비 서비스</h2>
         <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
           예방·대응·복원의 전 과정을 아우르는 4대 정비 서비스입니다.
@@ -158,10 +158,10 @@ function Hero() {
       </div>
       <div className="container-x pt-24 pb-16 md:pt-44 md:pb-40">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
+          {/* <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/[0.04] px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-medium tracking-widest uppercase text-primary backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Service & Maintenance
-          </div>
+          </div> */}
           <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
             멈추지 않는 현장,
             <br />
@@ -311,7 +311,7 @@ function FinalCta() {
         <div className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         <div className="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-10">
           <div className="max-w-2xl">
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p>
+            {/* <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase">Get in touch</p> */}
             <h2 className="mt-3 md:mt-4 font-display text-2xl md:text-6xl font-bold leading-[1.1] md:leading-[1.05]">
               장비 상태가
               <br />

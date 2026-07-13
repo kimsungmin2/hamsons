@@ -69,7 +69,7 @@ function ProductsPage() {
   return (
     <SiteLayout>
       <section className="container-x py-14 md:py-28">
-        <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">Products</p>
+        {/* <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">Products</p> */}
         <h1 className="mt-2 md:mt-3 text-2xl md:text-7xl font-bold text-balance max-w-3xl">{copy.title}</h1>
         <p className="mt-3 md:mt-6 text-muted-foreground text-sm md:text-lg max-w-2xl">{copy.desc}</p>
         {!isCategoryView && (
@@ -107,9 +107,9 @@ function ProductsPage() {
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-3 md:p-6 flex items-end justify-between gap-2 md:gap-4">
                     <div>
-                      <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+                      {/* <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
                         Category · {count}종
-                      </div>
+                      </div> */}
                       <h3 className="mt-1 md:mt-2 text-sm md:text-2xl font-bold text-white">{c.name}</h3>
                       <p className="mt-0.5 md:mt-1 text-[10px] md:text-sm text-white/70 hidden sm:block">{c.tagline}</p>
                     </div>
