@@ -88,9 +88,9 @@ function Index() {
             className="max-w-4xl text-left"
           >
             <h1 className="mt-3.5 sm:mt-6 font-display text-[32px] sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.12] sm:leading-[1.02] md:leading-[0.95] text-balance">
-              글로벌 시장을
+              소형건설기계의 모든 가치를
               <br className="hidden sm:inline" />
-              <span className="text-primary"> 움직이는 힘.</span>
+              <span className="text-primary"> 함손건설기계에서.</span>
             </h1>
             <p className="mt-3 sm:mt-6 max-w-xl text-sm sm:text-lg md:text-xl text-white/85 leading-relaxed sm:leading-normal">
               대한민국 축산·건설 현장의 든든한 파트너. 스키드로더 / 미니 굴착기 / 컴팩트 휠 로더까지

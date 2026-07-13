@@ -224,12 +224,12 @@ function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Rental · New · Used
           </div> */}
-          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
+          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05] text-white">
             <span className="whitespace-nowrap">다양한 현장에 필요한 장비,</span>
             <br />
             <span className="text-primary">한 번의 상담으로.</span>
           </h1>
-          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-foreground/75 leading-relaxed">
+          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-white/80 leading-relaxed">
             단기 렌탈, 신차 견적, 중고 매매까지
             <br className="hidden md:block" />
             함손건설기계는 다양한 위치에서 현장을 책임지고 있습니다.

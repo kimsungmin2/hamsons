@@ -162,12 +162,12 @@ function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
             Service & Maintenance
           </div> */}
-          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05]">
+          <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold text-balance leading-[1.1] md:leading-[1.05] text-white">
             멈추지 않는 현장,
             <br />
             <span className="text-primary">완벽한 정비로 답합니다.</span>
           </h1>
-          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-foreground/75 leading-relaxed">
+          <p className="mt-3 md:mt-6 max-w-2xl text-sm md:text-lg text-white/80 leading-relaxed">
             밥캣 전문 엔지니어, 100% 순정 부품, 전남/영남 담당
             <br className="hidden md:block" />
             함손건설기계의 정비 서비스는 신뢰를 기반으로 정확한 업무 처리를 통해 고객님들의 문제를 해결해드립니다.
