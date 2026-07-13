@@ -20,6 +20,11 @@ import s590A from "@/assets/products/S590-A.jpg";
 import s590B from "@/assets/products/S590-B.jpg";
 import s590C from "@/assets/products/S590-C.jpg";
 import s590D from "@/assets/products/S590-D.jpg";
+import s650A from "@/assets/products/S650-A.png";
+import s650B from "@/assets/products/S650-B.png";
+import s650C from "@/assets/products/S650-C.png";
+import s650D from "@/assets/products/S650-D.png";
+import s650E from "@/assets/products/S650-E.png";
 
 // 모델별 메인 이미지 (개별 모델 전용 이미지가 있을 때 등록)
 const MODEL_IMAGES: Record<string, string> = {
@@ -39,7 +44,8 @@ const MODEL_IMAGES: Record<string, string> = {
   E35z: e35zMain,
 };
 
-export type ProductCategory = "skid-loader" | "mini-excavator" | "compact-wheel-loader" | "attachment" | "parts";
+export type ProductCategory =
+  "skid-loader" | "mini-excavator" | "compact-wheel-loader" | "attachment" | "parts";
 
 export const PRODUCT_CATEGORIES: { id: ProductCategory | "all"; label: string }[] = [
   { id: "all", label: "전체" },
@@ -101,10 +107,22 @@ const CATEGORY_IMAGE: Record<ProductCategory, string> = {
 };
 
 const DEFAULT_FEATURES = [
-  { title: "신뢰성 높은 엔진", desc: "안정적인 출력과 우수한 연비로 장시간 작업에도 가동률을 유지합니다." },
-  { title: "정밀 유압 컨트롤", desc: "전자 비례 제어로 미세 작업과 헤비듀티 작업 모두 정확하게 수행합니다." },
-  { title: "쾌적한 캐빈 환경", desc: "넓은 시야와 저진동·저소음 설계로 운전자의 피로를 줄여줍니다." },
-  { title: "다양한 어태치먼트 호환", desc: "퀵 커플러 표준을 지원하여 현장 상황에 맞춰 빠르게 전환 가능합니다." },
+  {
+    title: "신뢰성 높은 엔진",
+    desc: "안정적인 출력과 우수한 연비로 장시간 작업에도 가동률을 유지합니다.",
+  },
+  {
+    title: "정밀 유압 컨트롤",
+    desc: "전자 비례 제어로 미세 작업과 헤비듀티 작업 모두 정확하게 수행합니다.",
+  },
+  {
+    title: "쾌적한 캐빈 환경",
+    desc: "넓은 시야와 저진동·저소음 설계로 운전자의 피로를 줄여줍니다.",
+  },
+  {
+    title: "다양한 어태치먼트 호환",
+    desc: "퀵 커플러 표준을 지원하여 현장 상황에 맞춰 빠르게 전환 가능합니다.",
+  },
 ];
 
 const USE_CASES_BY_CATEGORY: Record<ProductCategory, string[]> = {
@@ -135,7 +153,8 @@ function bobcat(seed: BobcatSeed): Product {
     features: DEFAULT_FEATURES,
     useCases: USE_CASES_BY_CATEGORY[seed.category],
     price: "가격 문의",
-    priceNote: "부가세 별도. 옵션·운송비·등록비 미포함이며, 환율 및 사양에 따라 변동될 수 있습니다.",
+    priceNote:
+      "부가세 별도. 옵션·운송비·등록비 미포함이며, 환율 및 사양에 따라 변동될 수 있습니다.",
   };
 }
 
@@ -210,7 +229,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,656 mm" },
       { label: "운전중량", value: "3,010 kg" },
     ],
-    gallery: [s590Main, s590A, s590B, s590C, s590D],
+    gallery: [s590A, s590B, s590C, s590D],
   },
   {
     code: "S650",
@@ -225,6 +244,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,740 mm" },
       { label: "운전중량", value: "3,820 kg" },
     ],
+    gallery: [s650A, s650B, s650C, s650D, s650E],
   },
   {
     code: "S76",
@@ -383,10 +403,22 @@ products.push({
     { label: "용도", value: "중량물 운송" },
   ],
   features: [
-    { title: "강인한 프레임 설계", desc: "헤비듀티 구조로 무거운 중량물도 안전하게 지지하고 운반합니다." },
-    { title: "협소 현장 최적화", desc: "좁은 작업 공간에서도 효율적인 운송이 가능하도록 설계되었습니다." },
-    { title: "유압식 정밀 제어", desc: "유압 시스템으로 미세한 적재·하역 작업까지 정확하게 컨트롤합니다." },
-    { title: "T76 · T86 호환", desc: "밥캣 T76, T86 트랙 로더와의 호환을 통해 다양한 현장에 즉시 투입됩니다." },
+    {
+      title: "강인한 프레임 설계",
+      desc: "헤비듀티 구조로 무거운 중량물도 안전하게 지지하고 운반합니다.",
+    },
+    {
+      title: "협소 현장 최적화",
+      desc: "좁은 작업 공간에서도 효율적인 운송이 가능하도록 설계되었습니다.",
+    },
+    {
+      title: "유압식 정밀 제어",
+      desc: "유압 시스템으로 미세한 적재·하역 작업까지 정확하게 컨트롤합니다.",
+    },
+    {
+      title: "T76 · T86 호환",
+      desc: "밥캣 T76, T86 트랙 로더와의 호환을 통해 다양한 현장에 즉시 투입됩니다.",
+    },
   ],
   useCases: ["태양광 패널 운송", "자재 운반", "협소 현장 작업", "중량물 적재"],
   price: "가격 문의",

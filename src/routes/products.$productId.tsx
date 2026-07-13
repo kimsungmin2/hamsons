@@ -60,7 +60,8 @@ function ProductDetail() {
   const related = getRelated(product.id);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const displayImages = isExpanded ? product.gallery : product.gallery.slice(0, 3);
+  const limit = 4;
+  const displayImages = isExpanded ? product.gallery : product.gallery.slice(0, limit);
 
   return (
     <SiteLayout>
@@ -225,17 +226,15 @@ function ProductDetail() {
               </button>
             )}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
             {displayImages.map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.97 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`relative overflow-hidden rounded-xl bg-[color:var(--steel)] ${
-                  i === 0 ? "md:col-span-2 md:row-span-2 aspect-[16/10]" : "aspect-[4/3]"
-                }`}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="relative overflow-hidden rounded-xl bg-[color:var(--steel)] aspect-[4/3]"
               >
                 <img
                   src={src}
@@ -243,13 +242,13 @@ function ProductDetail() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                {i === 2 && product.gallery.length > 3 && !isExpanded && (
+                {i === 3 && product.gallery.length > limit && !isExpanded && (
                   <button
                     onClick={() => setIsExpanded(true)}
                     className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex flex-col justify-center items-center gap-1.5 transition-all duration-300 hover:bg-black/55 text-white font-bold cursor-pointer"
                   >
                     <span className="text-xl md:text-2xl font-mono text-primary">
-                      + {product.gallery.length - 2}
+                      + {product.gallery.length - 3}
                     </span>
                     <span className="text-xs md:text-sm tracking-wide text-white/90">
                       장비 사진 더보기
