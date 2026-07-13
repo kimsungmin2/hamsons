@@ -15,7 +15,7 @@ import rental from "@/assets/rental-section.jpg";
 import company from "@/assets/company.jpg";
 import shopParts from "@/assets/shop-section.jpg";
 
-export const Route = createFileRoute("/")(  {
+export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "함손건설기계 — 소형건설기계의 새로운 기준" },
@@ -39,28 +39,24 @@ const products = [
     name: "밥캣 로더 시리즈 ",
     spec: "1.3t — 5.9t",
     img: loaderCategoryImg,
-    // code: "Bobcat Loader Series",
     category: "skid-loader" as const,
   },
   {
     name: "밥캣 굴착기 시리즈",
     spec: "1.7t — 3.8t",
     img: excavatorCategoryImg,
-    // code: "Bobcat MEX Series",
     category: "mini-excavator" as const,
   },
   {
     name: "밥캣 휠로더 시리즈",
     spec: "버킷 0.85㎥급",
     img: wheelLoaderCategoryImg,
-    // code: "Bobcat Compact Wheel Loaders Series",
     category: "compact-wheel-loader" as const,
   },
   {
     name: "함손 밥캣 어태치먼트",
     spec: "버킷 · 브레이커 · 오거 외",
     img: attachmentCategoryImg,
-    // code: "Bobcat Attachments Series",
     category: "attachment" as const,
   },
 ];
@@ -69,8 +65,8 @@ function Index() {
   return (
     <SiteLayout>
       <SocialBadges variant="floating" />
-      {/* HERO — dark section */}
-      <section className="dark-section relative -mt-16 min-h-[100svh] md:h-[100svh] md:min-h-[640px] w-full overflow-hidden bg-[oklch(0.14_0.005_250)] flex flex-col justify-end">
+      {/* HERO */}
+      <section className="relative -mt-16 min-h-[100svh] md:h-[100svh] md:min-h-[640px] w-full overflow-hidden bg-[color:var(--steel)] flex flex-col justify-end">
         <img
           src={hero}
           alt="밥캣 건설장비 전시장"
@@ -88,9 +84,9 @@ function Index() {
             className="max-w-4xl text-left"
           >
             <h1 className="mt-3.5 sm:mt-6 font-display text-[32px] sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.12] sm:leading-[1.02] md:leading-[0.95] text-balance">
-              소형건설기계의 모든 가치를
-              <br className="hidden sm:inline" />
-              <span className="text-primary"> 함손건설기계에서.</span>
+              <span className="whitespace-nowrap">소형건설기계의 모든 가치를</span>
+              <br />
+              <span className="text-primary whitespace-nowrap">함손건설기계에서.</span>
             </h1>
             <p className="mt-3 sm:mt-6 max-w-xl text-sm sm:text-lg md:text-xl text-white/85 leading-relaxed sm:leading-normal">
               대한민국 축산·건설 현장의 든든한 파트너. 스키드로더 / 미니 굴착기 / 컴팩트 휠 로더까지
@@ -99,7 +95,7 @@ function Index() {
             <div className="mt-6 sm:mt-10 flex flex-row items-center gap-2 sm:gap-3">
               <Link
                 to="/products"
-                className="inline-flex h-11 md:h-auto items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 md:px-6 md:py-3.5 text-sm md:text-base font-semibold text-white shadow-glow hover:opacity-90 transition cursor-pointer text-center"
+                className="inline-flex h-11 md:h-auto items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 md:px-6 md:py-3.5 text-sm md:text-base font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition cursor-pointer text-center"
               >
                 제품 보기 →
               </Link>
@@ -121,7 +117,7 @@ function Index() {
         </div>
       </section>
 
-      {/* PRODUCT SHOWCASE — light background */}
+      {/* PRODUCT SHOWCASE */}
       <section className="py-16 md:py-32 bg-background">
         <div className="container-x">
           <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-10 md:mb-16">
@@ -153,9 +149,9 @@ function Index() {
                   to="/products"
                   search={{ category: p.category }}
                   preload="intent"
-                  className="group relative block overflow-hidden rounded-xl border border-border bg-white shadow-card transition hover:border-primary/50 hover:-translate-y-1"
+                  className="group relative block overflow-hidden rounded-xl border border-border bg-card shadow-card transition hover:border-primary/50 hover:-translate-y-1"
                 >
-                  <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                  <div className="aspect-[4/3] overflow-hidden bg-[color:var(--steel)]">
                     <img
                       src={p.img}
                       alt={p.name}
@@ -176,10 +172,10 @@ function Index() {
         </div>
       </section>
 
-      {/* RENTAL — slightly darker background */}
-      <section className="py-16 md:py-32 bg-white">
+      {/* RENTAL */}
+      <section className="py-16 md:py-32 bg-[color:var(--surface)]">
         <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-card">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-card border border-border">
             <img
               src={rental}
               alt="렌탈 장비"
@@ -211,7 +207,7 @@ function Index() {
             </ul>
             <Link
               to="/rental"
-              className="mt-8 md:mt-10 inline-flex items-center rounded-md border border-border px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-foreground hover:bg-gray-50 hover:border-primary/40 transition"
+              className="mt-8 md:mt-10 inline-flex items-center rounded-md border border-border px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-foreground hover:bg-white/5 hover:border-primary/40 transition"
             >
               렌탈·중고 라인업 보기
             </Link>
@@ -244,7 +240,7 @@ function Index() {
             </ul>
             <Link
               to="/service"
-              className="mt-8 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-white shadow-glow hover:opacity-90 transition"
+              className="mt-8 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
             >
               정비 서비스 자세히 →
             </Link>
@@ -268,10 +264,9 @@ function Index() {
       </section>
 
       {/* COMPANY */}
-      <section className="py-16 md:py-32 bg-white">
+      <section className="py-16 md:py-32 bg-[color:var(--surface)]">
         <div className="container-x grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* TODO: replace COMPANY_YOUTUBE_ID with the provided YouTube video ID */}
-          <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-gray-100 shadow-card">
+          <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-black/60 shadow-card">
             <iframe
               src="https://www.youtube.com/embed/DvVLthI9WOs"
               title="함손건설기계 회사 소개 영상"
@@ -291,7 +286,7 @@ function Index() {
             </p>
             <Link
               to="/about"
-              className="mt-8 md:mt-10 inline-flex items-center rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-white hover:opacity-90 transition"
+              className="mt-8 md:mt-10 inline-flex items-center rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-primary-foreground hover:opacity-90 transition"
             >
               회사 소개 자세히 →
             </Link>
@@ -328,7 +323,7 @@ function Index() {
               href="https://hamson.co.kr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-white shadow-glow hover:opacity-90 transition"
+              className="mt-8 md:mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-base font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
             >
               쇼핑몰 바로가기 ↗
             </a>
@@ -437,8 +432,16 @@ function ContactCTASection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-16 md:py-32 bg-white scroll-mt-20"
+      className="relative overflow-hidden py-16 md:py-32 bg-[color:var(--surface)] scroll-mt-20"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[880px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:64px_64px]"
+      />
       <div className="container-x relative">
         <div className="grid lg:grid-cols-[1.05fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
           {/* LEFT: headline + channels */}
@@ -461,7 +464,7 @@ function ContactCTASection() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : undefined}
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`group relative flex items-start gap-3 md:gap-4 rounded-xl border border-border bg-background p-3 md:p-5 transition hover:border-primary/40 hover:bg-white hover:shadow-md ${
+                    className={`group relative flex items-start gap-3 md:gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 md:p-5 backdrop-blur-sm transition hover:border-primary/40 hover:bg-white/[0.06] ${
                       i === 4 ? "col-span-2 sm:col-span-1" : "col-span-1"
                     }`}
                   >
@@ -483,15 +486,15 @@ function ContactCTASection() {
             </div>
           </div>
 
-          {/* RIGHT: inquiry form — highlighted with primary border */}
+          {/* RIGHT: inquiry form */}
           <div className="relative">
             <div
               aria-hidden
-              className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/30 via-border to-transparent opacity-80"
+              className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/40 via-white/10 to-transparent opacity-60"
             />
             <form
               onSubmit={handleSubmit}
-              className="relative rounded-2xl border-2 border-primary/30 bg-white p-7 md:p-9 shadow-lg space-y-5"
+              className="relative rounded-2xl border border-white/10 bg-black/40 p-7 md:p-9 backdrop-blur-xl shadow-card space-y-5"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground">상담 신청</h3>
@@ -508,12 +511,12 @@ function ContactCTASection() {
                 </label>
                 <select
                   name="type"
-                  className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-base text-foreground transition focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-foreground transition focus:outline-none focus:border-primary/60 focus:bg-white/[0.07]"
                 >
-                  <option>신차 구매</option>
-                  <option>단기 렌탈</option>
-                  <option>중고 매매</option>
-                  <option>정비 · 서비스</option>
+                  <option className="bg-background">신차 구매</option>
+                  <option className="bg-background">단기 렌탈</option>
+                  <option className="bg-background">중고 매매</option>
+                  <option className="bg-background">정비 · 서비스</option>
                 </select>
               </div>
 
@@ -526,20 +529,20 @@ function ContactCTASection() {
                   rows={4}
                   required
                   placeholder="장비 모델, 사용 현장, 일정 등을 적어주세요."
-                  className="mt-2 w-full resize-none rounded-md border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="mt-2 w-full resize-none rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary/60 focus:bg-white/[0.07]"
                 />
               </div>
 
               {/* Privacy consent checkbox */}
-              <div className="flex items-start gap-3 rounded-lg border border-border bg-background p-4">
+              <div className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-4">
                 <input
                   type="checkbox"
                   id="privacy-agree"
                   checked={privacyAgreed}
                   onChange={(e) => setPrivacyAgreed(e.target.checked)}
-                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-gray-300 text-primary focus:ring-primary/30 cursor-pointer accent-primary"
+                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-white/10 bg-white/[0.04] text-primary focus:ring-primary/30 cursor-pointer accent-primary"
                 />
-                <label htmlFor="privacy-agree" className="text-sm text-foreground leading-relaxed cursor-pointer">
+                <label htmlFor="privacy-agree" className="text-sm text-foreground/80 leading-relaxed cursor-pointer">
                   상담을 위한{" "}
                   <Link
                     to="/privacy"
@@ -556,7 +559,7 @@ function ContactCTASection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative w-full overflow-hidden rounded-md bg-primary px-6 py-4 text-base font-bold text-white shadow-glow transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
+                className="group relative w-full overflow-hidden rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-glow transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
               >
                 <span className="relative z-10 inline-flex items-center justify-center gap-2">
                   {isSubmitting ? (
@@ -603,7 +606,7 @@ function FormField({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+        className="mt-2 w-full rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition focus:outline-none focus:border-primary/60 focus:bg-white/[0.07]"
       />
     </div>
   );

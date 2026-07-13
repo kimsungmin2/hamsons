@@ -19,18 +19,11 @@ const nav: ReadonlyArray<NavItem> = [
   { to: "/", hash: "contact", label: "문의" },
 ];
 
-/** Pages that have a full-bleed dark hero at the top */
-const HERO_PAGES = ["/"];
-
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-
-  const hasHero = HERO_PAGES.includes(pathname);
-  /** On hero pages, show light text until user scrolls. Otherwise always dark text. */
-  const isOverHero = hasHero && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -77,27 +70,19 @@ export function Header() {
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
-  /* Colour tokens */
-  const headerBg = scrolled
-    ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
-    : isOverHero
-      ? "bg-transparent backdrop-blur-sm"
-      : "bg-white/80 backdrop-blur-xl border-b border-gray-200";
-
-  const textColor = isOverHero ? "text-white" : "text-gray-800";
-  const hoverColor = "hover:text-primary";
-  const activeColor = "text-primary";
-  const logoText = isOverHero ? "text-white" : "text-gray-900";
-
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${headerBg}`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "backdrop-blur-xl bg-background/85 border-b border-border shadow-sm"
+            : "bg-background/60 backdrop-blur"
+        }`}
       >
         <div className="container-x flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 group">
             <img src={logo} alt="HamSon" className="h-9 md:h-10 w-auto object-contain transition-transform group-hover:scale-105" />
-            <span className={`font-display text-lg md:text-xl font-bold tracking-tight transition-colors ${logoText}`}>
+            <span className="font-display text-lg md:text-xl font-bold tracking-tight text-white">
               함손건설기계
             </span>
           </Link>
@@ -112,7 +97,7 @@ export function Header() {
                     href={n.to}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors ${textColor} ${hoverColor}`}
+                    className="px-3 py-2 text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-colors"
                   >
                     {n.label}
                   </a>
@@ -124,7 +109,7 @@ export function Header() {
                     key={n.label}
                     href={`/#${n.hash}`}
                     onClick={handleContactClick}
-                    className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors cursor-pointer ${textColor} ${hoverColor}`}
+                    className="px-3 py-2 text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-colors cursor-pointer"
                   >
                     {n.label}
                   </a>
@@ -134,8 +119,8 @@ export function Header() {
                 <Link
                   key={n.label}
                   to={n.to}
-                  className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors ${textColor} ${hoverColor}`}
-                  activeProps={{ className: `px-3 py-2 text-sm font-semibold tracking-wide ${activeColor}` }}
+                  className="px-3 py-2 text-sm font-medium tracking-wide text-white/80 hover:text-primary transition-colors"
+                  activeProps={{ className: "px-3 py-2 text-sm font-semibold tracking-wide text-primary" }}
                   activeOptions={{ exact: true }}
                 >
                   {n.label}
@@ -148,7 +133,7 @@ export function Header() {
           <a
             href="/#contact"
             onClick={handleContactClick}
-            className="hidden md:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:opacity-90 transition cursor-pointer"
+            className="hidden md:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition cursor-pointer"
           >
             상담 신청
           </a>
@@ -158,11 +143,7 @@ export function Header() {
             type="button"
             aria-label={mobileOpen ? "메뉴 닫기" : "메뉴 열기"}
             onClick={() => setMobileOpen((v) => !v)}
-            className={`md:hidden flex items-center justify-center h-10 w-10 rounded-lg border transition ${
-              isOverHero
-                ? "border-white/20 bg-white/10 text-white hover:border-primary/40"
-                : "border-gray-300 bg-gray-100 text-gray-700 hover:border-primary/40"
-            }`}
+            className="md:hidden flex items-center justify-center h-10 w-10 rounded-lg border border-white/10 bg-white/5 text-white backdrop-blur transition hover:border-primary/40 hover:bg-white/10"
           >
             <AnimatePresence mode="wait" initial={false}>
               {mobileOpen ? (
@@ -204,7 +185,7 @@ export function Header() {
           >
             {/* Backdrop */}
             <div
-              className="absolute inset-0 bg-white/95 backdrop-blur-xl"
+              className="absolute inset-0 bg-background/95 backdrop-blur-xl"
               onClick={closeMobile}
             />
 
@@ -229,10 +210,10 @@ export function Header() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, ...stagger }}
-                      className="w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-gray-800 hover:text-primary transition-colors"
+                      className="w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-white/90 hover:text-primary transition-colors"
                     >
                       {n.label}
-                      <span className="ml-1.5 text-xs text-gray-400">↗</span>
+                      <span className="ml-1.5 text-xs text-white/40">↗</span>
                     </motion.a>
                   );
                 }
@@ -245,7 +226,7 @@ export function Header() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, ...stagger }}
-                      className="w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-gray-800 hover:text-primary transition-colors cursor-pointer"
+                      className="w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-white/90 hover:text-primary transition-colors cursor-pointer"
                     >
                       {n.label}
                     </motion.a>
@@ -261,7 +242,7 @@ export function Header() {
                     <Link
                       to={n.to}
                       onClick={closeMobile}
-                      className="block w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-gray-800 hover:text-primary transition-colors"
+                      className="block w-full max-w-xs text-center py-3.5 text-xl font-semibold tracking-wide text-white/90 hover:text-primary transition-colors"
                       activeProps={{ className: "block w-full max-w-xs text-center py-3.5 text-xl font-bold tracking-wide text-primary" }}
                       activeOptions={{ exact: true }}
                     >

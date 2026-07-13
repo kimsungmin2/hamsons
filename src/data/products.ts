@@ -16,6 +16,10 @@ import e17zMain from "@/assets/products/E17z-main.png";
 import e20zMain from "@/assets/products/E20z-main.png";
 import e26Main from "@/assets/products/E26-main.png";
 import e35zMain from "@/assets/products/E35z-main.png";
+import s590A from "@/assets/products/S590-A.jpg";
+import s590B from "@/assets/products/S590-B.jpg";
+import s590C from "@/assets/products/S590-C.jpg";
+import s590D from "@/assets/products/S590-D.jpg";
 
 // 모델별 메인 이미지 (개별 모델 전용 이미지가 있을 때 등록)
 const MODEL_IMAGES: Record<string, string> = {
@@ -77,6 +81,7 @@ type BobcatSeed = {
   shortDesc: string;
   description: string;
   specs: { label: string; value: string }[];
+  gallery?: string[];
 };
 
 const CATEGORY_LABEL: Record<ProductCategory, string> = {
@@ -125,7 +130,7 @@ function bobcat(seed: BobcatSeed): Product {
     description: seed.description,
     hero: heroImg,
     thumb: thumbImg,
-    gallery: [heroImg, categoryImg, categoryImg],
+    gallery: seed.gallery ?? [heroImg, categoryImg, categoryImg],
     specs: seed.specs,
     features: DEFAULT_FEATURES,
     useCases: USE_CASES_BY_CATEGORY[seed.category],
@@ -205,6 +210,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,656 mm" },
       { label: "운전중량", value: "3,010 kg" },
     ],
+    gallery: [s590Main, s590A, s590B, s590C, s590D],
   },
   {
     code: "S650",

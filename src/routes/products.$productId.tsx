@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SiteLayout } from "@/components/site/Layout";
@@ -57,6 +58,9 @@ function ProductDetail() {
   const { productId } = Route.useParams();
   const product = getProduct(productId)!;
   const related = getRelated(product.id);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const displayImages = isExpanded ? product.gallery : product.gallery.slice(0, 3);
 
   return (
     <SiteLayout>
@@ -210,9 +214,19 @@ function ProductDetail() {
       <section className="py-14 md:py-24">
         <div className="container-x">
           <p className="text-primary text-xs md:text-sm font-semibold tracking-widest uppercase">Gallery</p>
-          <h2 className="mt-1.5 md:mt-2 text-2xl md:text-4xl font-bold text-balance">장비 갤러리</h2>
-          <div className="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-            {product.gallery.map((src, i) => (
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-6 md:mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-balance">장비 갤러리</h2>
+            {isExpanded && (
+              <button
+                onClick={() => setIsExpanded(false)}
+                className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              >
+                사진 접기 ↑
+              </button>
+            )}
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+            {displayImages.map((src, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.97 }}
@@ -229,9 +243,32 @@ function ProductDetail() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
+                {i === 2 && product.gallery.length > 3 && !isExpanded && (
+                  <button
+                    onClick={() => setIsExpanded(true)}
+                    className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex flex-col justify-center items-center gap-1.5 transition-all duration-300 hover:bg-black/55 text-white font-bold cursor-pointer"
+                  >
+                    <span className="text-xl md:text-2xl font-mono text-primary">
+                      + {product.gallery.length - 2}
+                    </span>
+                    <span className="text-xs md:text-sm tracking-wide text-white/90">
+                      장비 사진 더보기
+                    </span>
+                  </button>
+                )}
               </motion.div>
             ))}
           </div>
+          {isExpanded && (
+            <div className="mt-6 md:mt-8 text-center">
+              <button
+                onClick={() => setIsExpanded(false)}
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-xs md:text-sm font-semibold hover:border-primary/50 hover:text-primary transition cursor-pointer"
+              >
+                장비 사진 접기 ↑
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
