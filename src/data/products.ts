@@ -6,8 +6,8 @@ import hero from "@/assets/hero-excavator.jpg";
 import s590Main from "@/assets/products/S590-main.png";
 import s70Main from "@/assets/products/S70-main.png";
 import s76Main from "@/assets/products/S76-main.png";
-import s100Main from "@/assets/products/S100-main.png";
 import s86Main from "@/assets/products/S86-main.png";
+import s100Main from "@/assets/products/S100-main.png";
 import s450Main from "@/assets/products/S450-main.png";
 import s510Main from "@/assets/products/S510-main.png";
 import s650Main from "@/assets/products/S650-main.png";
@@ -167,8 +167,7 @@ function bobcat(seed: BobcatSeed) {
   };
 }
 
-const BOBCAT_SEEDS = [
-  // 스키드 스티어 로더 (S 시리즈)
+const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S70",
     category: "skid-loader",
