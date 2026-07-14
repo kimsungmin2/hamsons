@@ -69,7 +69,7 @@ export type Product = {
   id: string;
   name: string;
   code: string;
-  tag: string;
+  // tag: string;
   category: ProductCategory;
   shortDesc: string;
   description: string;
@@ -92,7 +92,7 @@ export const products: Product[] = [];
 type BobcatSeed = {
   code: string;
   category: ProductCategory;
-  tag: string;
+  // tag: string;
   shortDesc: string;
   description: string;
   specs: { label: string; value: string }[];
@@ -152,7 +152,7 @@ function bobcat(seed: BobcatSeed) {
     code: seed.code,
     name: "밥캣 " + seed.code,
     category: seed.category,
-    tag: seed.tag,
+    // tag: seed.tag,
     shortDesc: seed.shortDesc,
     description: seed.description,
     hero: heroImg,
@@ -171,7 +171,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S70",
     category: "skid-loader",
-    tag: "Sub-Compact",
+    // tag: "Sub-Compact",
     shortDesc: "초소형 차체로 협소 공간 작업에 최적화된 서브컴팩트 스키드 로더.",
     description:
       "S70은 좁은 통로와 실내 작업에 적합한 서브컴팩트 스키드 스티어 로더로, 정밀한 컨트롤과 다양한 어태치먼트 호환성을 제공합니다.",
@@ -185,7 +185,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S100",
     category: "skid-loader",
-    tag: "Compact",
+    // tag: "Compact",
     shortDesc: "협소 현장과 농업 작업에 적합한 컴팩트 스키드 로더.",
     description:
       "S100은 컴팩트한 차체에 균형 잡힌 출력을 갖춰 협소 현장과 경량 토공, 농업 작업에 두루 활용 가능합니다.",
@@ -199,7 +199,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S450",
     category: "skid-loader",
-    tag: "Compact",
+    // tag: "Compact",
     shortDesc: "균형 잡힌 출력과 정밀 컨트롤의 베스트셀러 컴팩트 스키드 로더.",
     description:
       "S450은 작은 차폭과 강한 견인력을 동시에 갖춘 컴팩트 스키드 로더로, 조경·철거·정리 작업에서 높은 생산성을 보여줍니다.",
@@ -213,7 +213,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S510",
     category: "skid-loader",
-    tag: "Compact",
+    // tag: "Compact",
     shortDesc: "균형 잡힌 출력과 컴팩트 차체를 갖춘 다목적 스키드 스티어 로더.",
     description:
       "S510은 컴팩트한 차체에 우수한 견인력과 안정적인 유압 성능을 결합해 다양한 현장에서 폭넓게 활용 가능한 스키드 스티어 로더입니다.",
@@ -227,7 +227,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S590",
     category: "skid-loader",
-    tag: "Mid-Frame",
+    // tag: "Mid-Frame",
     shortDesc: "수직 리프트 패스로 적재 안정성을 강화한 미드프레임 스키드 로더.",
     description:
       "S590은 수직 리프트 패스와 강력한 유압 출력으로 적재·운반 작업의 효율을 극대화한 미드프레임 스키드 로더입니다.",
@@ -242,7 +242,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S650",
     category: "skid-loader",
-    tag: "Mid-Frame",
+    // tag: "Mid-Frame",
     shortDesc: "고출력과 넉넉한 정격하중을 갖춘 다목적 미드프레임 스키드 로더.",
     description:
       "S650은 고출력 엔진과 우수한 유압 성능으로 대형 야적장, 토공, 건설 현장에서 폭넓게 활용되는 미드프레임 스키드 로더입니다.",
@@ -257,7 +257,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S76",
     category: "skid-loader",
-    tag: "R-Series",
+    // tag: "R-Series",
     shortDesc: "R-시리즈 신형 캐빈과 인라인 엔진을 적용한 차세대 스키드 로더.",
     description:
       "S76은 인라인 엔진 레이아웃과 R-시리즈 캐빈으로 정비성과 시야성을 동시에 강화한 차세대 스키드 스티어 로더입니다.",
@@ -271,7 +271,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "S86",
     category: "skid-loader",
-    tag: "R-Series",
+    // tag: "R-Series",
     shortDesc: "R-시리즈 라인업의 플래그십 스키드 스티어 로더.",
     description:
       "S86은 R-시리즈의 플래그십 모델로, 강화된 유압 시스템과 고출력 엔진을 통해 가장 까다로운 현장에서도 안정적인 성능을 제공합니다.",
@@ -285,7 +285,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "T76",
     category: "skid-loader",
-    tag: "Track Loader",
+    // tag: "Track Loader",
     shortDesc: "고무 트랙으로 험지 견인력을 강화한 컴팩트 트랙 로더.",
     description:
       "T76은 고무 트랙 시스템을 통해 진흙·모래 등 험지에서도 우수한 견인력과 부유성을 제공하는 컴팩트 트랙 로더입니다.",
@@ -299,7 +299,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "T86",
     category: "skid-loader",
-    tag: "Track Loader",
+    // tag: "Track Loader",
     shortDesc: "R-시리즈 플래그십 컴팩트 트랙 로더.",
     description:
       "T86은 고출력 엔진과 강화된 언더캐리지로 헤비듀티 트랙 작업에 최적화된 R-시리즈 플래그십 트랙 로더입니다.",
@@ -314,7 +314,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "E17z",
     category: "mini-excavator",
-    tag: "Zero Tail",
+    // tag: "Zer o Tail",
     shortDesc: "제로 테일 스윙의 1.7톤급 컴팩트 미니 굴착기.",
     description:
       "E17z는 제로 테일 스윙 설계로 좁은 현장에서도 안전하게 작업할 수 있는 1.7톤급 컴팩트 미니 굴착기입니다.",
@@ -328,7 +328,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "E20z",
     category: "mini-excavator",
-    tag: "Zero Tail",
+    // tag: "Zero Tail",
     shortDesc: "도심·조경 현장에 최적화된 2톤급 제로 테일 미니 굴착기.",
     description:
       "E20z는 컴팩트한 차체와 제로 테일 스윙을 갖춘 2톤급 미니 굴착기으로, 조경과 도심 인프라 현장에서 폭넓게 사용됩니다.",
@@ -342,7 +342,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "E26",
     category: "mini-excavator",
-    tag: "Conventional",
+    // tag: "Conventional",
     shortDesc: "안정적인 무게중심과 우수한 굴삭력을 갖춘 2.6톤급 미니 굴착기.",
     description:
       "E26은 컨벤셔널 테일 디자인을 적용해 안정적인 무게중심과 강한 굴삭력을 제공하는 2.6톤급 미니 굴착기입니다.",
@@ -356,7 +356,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "E35z",
     category: "mini-excavator",
-    tag: "Zero Tail",
+    // tag: "Zero Tail",
     shortDesc: "3.5톤급 제로 테일 스윙 미니 굴착기.",
     description:
       "E35z는 3.5톤급 제로 테일 스윙 미니 굴착기로, 협소한 공간에서의 안전한 회전과 강력한 굴삭 성능을 동시에 제공합니다.",
@@ -371,7 +371,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
   {
     code: "L85",
     category: "compact-wheel-loader",
-    tag: "Compact Wheel Loader",
+    // tag: "Compact Wheel Loader",
     shortDesc: "다목적 작업에 최적화된 컴팩트 휠로더.",
     description:
       "L85는 강력한 견인력과 우수한 기동성을 갖춘 컴팩트 휠로더로, 자재 운반·적재·제설 등 다양한 작업에 활용 가능합니다.",
@@ -397,7 +397,7 @@ products.push(
     code: "HS-PC",
     name: "스키드로더 파이프클램프",
     category: "attachment",
-    tag: "파이프 클램프",
+    // tag: "파이프 클램프",
     shortDesc: "원형 파이프, 목재 및 원통형 자재를 굳게 움켜쥐어 운송하는 유압 집게.",
     description:
       "스키드로더 파이프클램프는 상부의 강력한 유압 홀더가 둥근 파이프나 나무 실린더 등을 위에서 꽉 눌러주어, 경사로 주행이나 험지 운반 시에도 자재가 이탈되지 않게 단단히 고정하는 특수 클램핑 지게발입니다.",
@@ -433,7 +433,7 @@ products.push(
     code: "HS-SF",
     name: "스키드로더 태양광 지게발",
     category: "attachment",
-    tag: "태양광 지게발",
+    // tag: "태양광 지게발",
     shortDesc: "태양광 구조물 및 백가이드 하중을 안전하게 견디는 고상 지게발.",
     description:
       "스키드로더 태양광 지게발은 등받이 프레임(백레스트)을 대폭 높여 제작한 특수 지게발로, 미끄러지기 쉽고 부피가 큰 태양광 모듈 패널과 지지 구조물을 안전하게 이동시킵니다.",
@@ -469,7 +469,7 @@ products.push(
     code: "HS-SW",
     name: "스키드로더 청소기",
     category: "attachment",
-    tag: "청소기",
+    // tag: "청소기",
     shortDesc: "고성능 유압 모터와 고탄성 브러시로 도로 및 현장 노면을 깨끗이 청소하는 장비.",
     description:
       "스키드로더 청소기는 강력한 유압 구동 모터를 탑재해 고속 회전하는 브러시로 도로, 현장, 농가의 흙먼지와 쓰레기를 신속하게 쓸어 담아 청소하는 고성능 청소 어태치먼트입니다.",
@@ -505,7 +505,7 @@ products.push(
     code: "HS-CB",
     name: "스키드로더 제작 버켓",
     category: "attachment",
-    tag: "제작 버켓",
+    // tag: "제작 버켓",
     shortDesc: "고장력 강판 구조와 다목적 적재 설계로 대량의 자재를 안전하게 이동하는 맞춤형 버켓.",
     description:
       "스키드로더 제작 버켓은 골재, 토사, 가축 사료, 비료 등 다양한 자재의 굴착 및 이동을 위해 견고하게 커스텀 제작된 헤비듀티 버켓입니다.",
@@ -541,7 +541,7 @@ products.push(
     code: "HS-HF",
     name: "스키드로더 유압식 지게발",
     category: "attachment",
-    tag: "유압식 지게발",
+    // tag: "유압식 지게발",
     shortDesc: "캐빈(운전석) 내부에서 포크 좌우 간격을 편리하게 유압으로 제어하는 자동 지게발.",
     description:
       "스키드로더 유압식 지게발은 작업자가 운전석에서 내리지 않고 내부 레버 조작만으로 팔레트 규격에 맞춰 지게발 폭을 자동으로 밀고 당길 수 있도록 유압 시스템이 빌트인된 스마트 어태치먼트입니다.",
@@ -577,7 +577,7 @@ products.push(
     code: "HS-TBH",
     name: "스키드로더 톤백걸이",
     category: "attachment",
-    tag: "톤백 걸이",
+    // tag: "톤백 걸이",
     shortDesc: "1톤 규격의 대형 톤백(PP Bag)을 안전하게 이동하는 전용 행거 프레임.",
     description:
       "스키드로더 톤백걸이는 사료, 곡물, 모래, 비료 등이 충진된 1톤 용량의 대형 톤백을 로더 전면에 쉽고 빠르게 걸어서 트럭이나 야적 공간에 하역할 수 있도록 고안된 안전 행거 프레임입니다.",
@@ -613,7 +613,7 @@ products.push(
     code: "HS-SB",
     name: "스키드로더 스텐 버켓",
     category: "attachment",
-    tag: "스텐 버켓",
+    // tag: "스텐 버켓",
     shortDesc: "부식성 강한 비료, 사료 및 가축 분뇨 적재에 특화된 100% 스텐 버켓.",
     description:
       "스키드로더 스텐 버켓은 사료 배합 및 비료 하역, 분뇨 정리 시 암모니아나 습기에 의해 철판 버켓이 부식되는 한계를 완벽하게 극복하기 위해 최고급 스테인리스강(SUS304)으로 특수 용접 제작된 청결 버켓입니다.",
@@ -649,7 +649,7 @@ products.push(
     code: "HS-SC",
     name: "스키드로더 및 트렉터 전용 일자집게",
     category: "attachment",
-    tag: "일자집게",
+    // tag: "일자집게",
     shortDesc: "스키드로더 및 농업용 트랙터에 공용 장착 가능한 일자형 집게.",
     description:
       "일자집게 어태치먼트는 스키드로더 및 농가용 트랙터 전방 로더에 범용 장착이 가능하도록 마운트를 이중화 설계하였으며, 마대포대, 원형 곤포 등을 굳건히 모아 집어 올릴 수 있는 가성비 높은 집게 장비입니다.",

@@ -175,9 +175,9 @@ function ProductDetail() {
             <h3 className="font-display text-lg font-bold mb-4">주요 사양</h3>
             <dl className="divide-y divide-border">
               {product.specs.map((s) => (
-                <div key={s.label} className="flex justify-between py-3 text-sm">
-                  <dt className="text-muted-foreground">{s.label}</dt>
-                  <dd className="font-mono font-semibold">{s.value}</dd>
+                <div key={s.label} className="flex justify-between py-3.5 text-sm md:text-base">
+                  <dt className="text-muted-foreground font-medium">{s.label}</dt>
+                  <dd className="font-mono font-bold text-primary">{s.value}</dd>
                 </div>
               ))}
             </dl>

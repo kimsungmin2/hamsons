@@ -157,20 +157,20 @@ function ProductsPage() {
                     <h3 className="mt-0.5 md:mt-1 text-base md:text-xl font-bold truncate">{p.name}</h3>
                     <p className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">{p.shortDesc}</p>
                   </div>
-                  <span className="shrink-0 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs text-primary">
+                  {/* <span className="shrink-0 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs text-primary">
                     {p.tag}
-                  </span>
+                  </span> */}
                 </div>
                 <div className="px-4 md:px-6 pb-3 md:pb-5 grid grid-cols-3 gap-2 md:gap-3 border-t border-border/60 pt-3 md:pt-4">
                   {p.specs.slice(0, 3).map((s) => (
                     <div key={s.label}>
-                      <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
-                      <div className="mt-0.5 md:mt-1 text-xs md:text-sm font-semibold">{s.value}</div>
+                      <div className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground font-medium">{s.label}</div>
+                      <div className="mt-0.5 md:mt-1 text-sm md:text-base font-bold text-foreground">{s.value}</div>
                     </div>
                   ))}
                 </div>
                 <div className="px-4 md:px-6 pb-4 md:pb-6 flex items-center justify-between text-xs md:text-sm">
-                  <span className="text-muted-foreground">모델 {p.code}</span>
+                  {/* <span className="text-muted-foreground">모델 {p.code}</span> */}
                   <span className="text-primary font-semibold transition group-hover:translate-x-1">상세 보기 →</span>
                 </div>
               </Link>
