@@ -21,11 +21,11 @@ import s590A from "@/assets/products/S590-A.jpg";
 import s590B from "@/assets/products/S590-B.jpg";
 import s590C from "@/assets/products/S590-C.jpg";
 import s590D from "@/assets/products/S590-D.jpg";
-import s650A from "@/assets/products/S650-A.png";
-import s650B from "@/assets/products/S650-B.png";
-import s650C from "@/assets/products/S650-C.png";
-import s650D from "@/assets/products/S650-D.png";
-import s650E from "@/assets/products/S650-E.png";
+import s650A from "@/assets/products/S650-A.jpg";
+import s650B from "@/assets/products/S650-B.jpg";
+import s650C from "@/assets/products/S650-C.jpg";
+import s650D from "@/assets/products/S650-D.jpg";
+import s650E from "@/assets/products/S650-E.jpg";
 import hydraulicForks from "@/assets/products/hydraulic-forks.jpg";
 import customBucket from "@/assets/products/custom-bucket.jpg";
 import sweeper from "@/assets/products/sweeper.jpg";
@@ -34,6 +34,94 @@ import pipeClamp from "@/assets/products/pipe-clamp.jpg";
 import tonBagHanger from "@/assets/products/ton-bag-hanger.png";
 import stainlessBucket from "@/assets/products/stainless-bucket.jpg";
 import straightClamp from "@/assets/products/straight-clamp.png";
+import s70A from "@/assets/products/s70-A.jpg";
+import s70B from "@/assets/products/s70-B.jpg";
+import s70C from "@/assets/products/s70-C.jpg";
+import s70D from "@/assets/products/s70-D.jpg";
+import s70E from "@/assets/products/s70-E.jpg";
+import s70F from "@/assets/products/s70-F.jpg";
+import s70G from "@/assets/products/s70-G.jpg";
+import s70H from "@/assets/products/s70-H.jpg";
+import s100A from "@/assets/products/S100-A.jpg";
+import s100B from "@/assets/products/S100-B.jpg";
+import s100C from "@/assets/products/S100-C.jpg";
+import s100D from "@/assets/products/S100-D.png";
+import l85A from "@/assets/products/L85-A.jpg";
+import l85B from "@/assets/products/L85-B.jpg";
+import l85C from "@/assets/products/L85-C.jpg";
+import l85D from "@/assets/products/L85-D.jpg";
+import l85E from "@/assets/products/L85-E.jpg";
+import l85F from "@/assets/products/L85-F.jpg";
+import l85G from "@/assets/products/L85-G.jpg";
+import l85H from "@/assets/products/L85-H.jpg";
+import s450A from "@/assets/products/S450-A.jpg";
+import s450B from "@/assets/products/S450-B.jpg";
+import s450C from "@/assets/products/S450-C.jpg";
+import s450D from "@/assets/products/S450-D.jpg";
+import s510A from "@/assets/products/S510-A.jpg";
+import s510B from "@/assets/products/S510-B.jpg";
+import s510C from "@/assets/products/S510-C.jpg";
+import s510D from "@/assets/products/S510-D.jpg";
+import s510E from "@/assets/products/S510-E.jpg";
+import s510F from "@/assets/products/S510-F.jpg";
+import s510G from "@/assets/products/S510-G.jpg";
+import s510H from "@/assets/products/S510-H.jpg";
+import s76A from "@/assets/products/S76-A.jpg";
+import s76B from "@/assets/products/S76-B.jpg";
+import s76C from "@/assets/products/S76-C.jpg";
+import s76D from "@/assets/products/S76-D.jpg";
+import s76E from "@/assets/products/S76-E.jpg";
+import s76F from "@/assets/products/S76-F.jpg";
+import s76G from "@/assets/products/S76-G.jpg";
+import s76H from "@/assets/products/S76-H.jpg";
+import s86A from "@/assets/products/S86-A.jpg";
+import s86B from "@/assets/products/S86-B.jpg";
+import s86C from "@/assets/products/S86-C.jpg";
+import s86D from "@/assets/products/S86-D.jpg";
+import s86E from "@/assets/products/S86-E.jpg";
+import s86F from "@/assets/products/S86-F.jpg";
+import s86G from "@/assets/products/S86-G.jpg";
+import s86H from "@/assets/products/S86-H.jpg";
+import t76A from "@/assets/products/T76-A.jpg";
+import t76B from "@/assets/products/T76-B.jpg";
+import t76C from "@/assets/products/T76-C.jpg";
+import t76D from "@/assets/products/T76-D.jpg";
+import t76E from "@/assets/products/T76-E.jpg";
+import t76F from "@/assets/products/T76-F.jpg";
+import t76G from "@/assets/products/T76-G.jpg";
+import t76H from "@/assets/products/T76-H.jpg";
+import t86A from "@/assets/products/T86-A.jpg";
+import t86B from "@/assets/products/T86-B.jpg";
+import t86C from "@/assets/products/T86-C.jpg";
+import t86D from "@/assets/products/T86-D.jpg";
+import t86E from "@/assets/products/T86-E.jpg";
+import t86F from "@/assets/products/T86-F.jpg";
+import e17zA from "@/assets/products/E17-A.jpg";
+import e17zB from "@/assets/products/E17-B.jpg";
+import e17zC from "@/assets/products/E17-C.jpg";
+import e17zD from "@/assets/products/E17-D.jpg";
+import e20zA from "@/assets/products/E20-A.jpg";
+import e20zB from "@/assets/products/E20-B.jpg";
+import e20zC from "@/assets/products/E20-C.jpg";
+import e20zD from "@/assets/products/E20-D.jpg";
+import e20zE from "@/assets/products/E20-E.jpg";
+import e20zF from "@/assets/products/E20-F.jpg";
+import e20zG from "@/assets/products/E20-G.jpg";
+import e20zH from "@/assets/products/E20-H.jpg";
+import e26A from "@/assets/products/E26-A.jpg";
+import e26B from "@/assets/products/E26-B.jpg";
+import e26C from "@/assets/products/E26-C.jpg";
+import e26D from "@/assets/products/E26-D.jpg";
+import e26E from "@/assets/products/E26-E.jpg";
+import e26F from "@/assets/products/E26-F.jpg";
+import e35A from "@/assets/products/E35-A.jpg";
+import e35B from "@/assets/products/E35-B.jpg";
+import e35C from "@/assets/products/E35-C.jpg";
+import e35D from "@/assets/products/E35-D.jpg";
+import e35E from "@/assets/products/E35-E.jpg";
+import e35F from "@/assets/products/E35-F.jpg";
+import e35G from "@/assets/products/E35-G.jpg";
+import e35H from "@/assets/products/E35-H.jpg";
 
 // 모델별 메인 이미지 (개별 모델 전용 이미지가 있을 때 등록)
 const MODEL_IMAGES: Record<string, string> = {
@@ -181,6 +269,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "901 mm" },
       { label: "운전중량", value: "1,312 kg" },
     ],
+    gallery: [s70A, s70B, s70C, s70D, s70E, s70F, s70G, s70H],
   },
   {
     code: "S100",
@@ -195,6 +284,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,167 mm" },
       { label: "운전중량", value: "1,860 kg" },
     ],
+    gallery: [s100A, s100B, s100C, s100D],
   },
   {
     code: "S450",
@@ -209,6 +299,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,488 mm" },
       { label: "운전중량", value: "2,520 kg" },
     ],
+    gallery: [s450A, s450B, s450C, s450D],
   },
   {
     code: "S510",
@@ -223,6 +314,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,656 mm" },
       { label: "운전중량", value: "2,890 kg" },
     ],
+    gallery: [s510A, s510B, s510C, s510D, s510E, s510F, s510G, s510H],
   },
   {
     code: "S590",
@@ -267,6 +359,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,740 mm" },
       { label: "운전중량", value: "3,910 kg" },
     ],
+    gallery: [s76A, s76B, s76C, s76D, s76E, s76F, s76G, s76H],
   },
   {
     code: "S86",
@@ -281,6 +374,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,760 mm" },
       { label: "운전중량", value: "4,650 kg" },
     ],
+    gallery: [s86A, s86B, s86C, s86D, s86E, s86F, s86G, s86H],
   },
   {
     code: "T76",
@@ -295,6 +389,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,981 mm" },
       { label: "운전중량", value: "4,830 kg" },
     ],
+    gallery: [t76A, t76B, t76C, t76D, t76E, t76F, t76G, t76H],
   },
   {
     code: "T86",
@@ -309,6 +404,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "차폭", value: "1,981 mm" },
       { label: "운전중량", value: "5,910 kg" },
     ],
+    gallery: [t86A, t86B, t86C, t86D, t86E, t86F],
   },
   // 미니 굴착기 (E 시리즈)
   {
@@ -324,6 +420,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "최대 굴삭 깊이", value: "2,450 mm" },
       { label: "차폭", value: "980~1,360 mm" },
     ],
+    gallery: [e17zA, e17zB, e17zC, e17zD],
   },
   {
     code: "E20z",
@@ -338,6 +435,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "최대 굴삭 깊이", value: "2,620 mm" },
       { label: "차폭", value: "980~1,360 mm" },
     ],
+    gallery: [e20zA, e20zB, e20zC, e20zD, e20zE, e20zF, e20zG, e20zH],
   },
   {
     code: "E26",
@@ -352,6 +450,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "최대 굴삭 깊이", value: "3,066 mm" },
       { label: "차폭", value: "1,550 mm" },
     ],
+    gallery: [e26A, e26B, e26C, e26D, e26E, e26F],
   },
   {
     code: "E35z",
@@ -366,6 +465,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "최대 굴삭 깊이", value: "3,265 mm" },
       { label: "차폭", value: "1,750 mm" },
     ],
+    gallery: [e35A, e35B, e35C, e35D, e35E, e35F, e35G, e35H],
   },
   // 컴팩트 휠로더 (L 시리즈)
   {
@@ -383,6 +483,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
       { label: "최고상승높이", value: "4,065 mm" },
       { label: "회전반경", value: "4,280 mm" },
     ],
+    gallery: [l85A, l85B, l85C, l85D, l85E, l85F, l85G, l85H],
   },
 ];
 
@@ -424,7 +525,12 @@ products.push(
         desc: "집게 접촉부에 미끄럼 방지 홈과 보강재가 들어가 자재 손상을 저감합니다.",
       },
     ],
-    useCases: ["상하수도 파이프 공사", "원목·벌목 자재 운반", "철근 콘크리트 원형관 적재", "비틀림 자재 고정 운송"],
+    useCases: [
+      "상하수도 파이프 공사",
+      "원목·벌목 자재 운반",
+      "철근 콘크리트 원형관 적재",
+      "비틀림 자재 고정 운송",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -496,7 +602,12 @@ products.push(
         desc: "먼지 날림과 돌튐 방지를 위한 올인원 철판 하우징으로 주변 작업 환경을 보호합니다.",
       },
     ],
-    useCases: ["포장 도로 모래 청소", "축사 및 마당 낙엽/사료 정리", "건설 현장 비산 먼지 억제", "겨울철 가벼운 제설"],
+    useCases: [
+      "포장 도로 모래 청소",
+      "축사 및 마당 낙엽/사료 정리",
+      "건설 현장 비산 먼지 억제",
+      "겨울철 가벼운 제설",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -532,7 +643,12 @@ products.push(
         desc: "측면 패널 각도를 넓혀 자재가 흘러내리지 않고 가득 차도록 적재 효율을 개선했습니다.",
       },
     ],
-    useCases: ["토사 및 자갈 상차 작업", "농업 축사 사료 급이 이동", "공장 폐기물 수집 야적", "건설 골재 야외 정리"],
+    useCases: [
+      "토사 및 자갈 상차 작업",
+      "농업 축사 사료 급이 이동",
+      "공장 폐기물 수집 야적",
+      "건설 골재 야외 정리",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -568,7 +684,12 @@ products.push(
         desc: "특수 열처리 레일을 장착해 무거운 적재물이 올려진 상태에서도 원활한 슬라이딩을 지원합니다.",
       },
     ],
-    useCases: ["크기가 다양한 물류 팔레트 하역", "농가 벌목 원목/마대 슬라이딩 상차", "자재 창고 정밀 적재", "태양광 프레임 가이드 진입 운반"],
+    useCases: [
+      "크기가 다양한 물류 팔레트 하역",
+      "농가 벌목 원목/마대 슬라이딩 상차",
+      "자재 창고 정밀 적재",
+      "태양광 프레임 가이드 진입 운반",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -604,7 +725,12 @@ products.push(
         desc: "일반 지게발보다 높은 상차 높이를 제공하여 대형 트럭 적재함 상단까지 안전하게 투입이 가능합니다.",
       },
     ],
-    useCases: ["농가 비료·사료 톤백 이동", "건설 골재 마대 톤백 상차", "정비 부품 박스 톤백 이동", "곡물 톤백 수거 작업"],
+    useCases: [
+      "농가 비료·사료 톤백 이동",
+      "건설 골재 마대 톤백 상차",
+      "정비 부품 박스 톤백 이동",
+      "곡물 톤백 수거 작업",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -640,7 +766,12 @@ products.push(
         desc: "스테인리스 접합부에 다중 아르곤 패스 용접을 실시하여 강한 충격과 압력에도 틈새 크랙을 예방합니다.",
       },
     ],
-    useCases: ["축사 내부 퇴비 정리", "화학 비료 하역 및 배합", "발효 사료 피딩 작업", "염분 노면 복구 정리"],
+    useCases: [
+      "축사 내부 퇴비 정리",
+      "화학 비료 하역 및 배합",
+      "발효 사료 피딩 작업",
+      "염분 노면 복구 정리",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },
@@ -676,7 +807,12 @@ products.push(
         desc: "경량화와 동시에 충분한 비틀림 모멘트를 확보하여 장기간의 험업에도 뒤틀림이 없습니다.",
       },
     ],
-    useCases: ["마대자재 적재", "곤포 짚단 이동 및 파쇄 보조", "농가 비닐 하우스 골재 적재", "폐기물 야적 정리"],
+    useCases: [
+      "마대자재 적재",
+      "곤포 짚단 이동 및 파쇄 보조",
+      "농가 비닐 하우스 골재 적재",
+      "폐기물 야적 정리",
+    ],
     price: "가격 문의",
     priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
   },

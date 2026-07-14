@@ -87,9 +87,9 @@ function ProductDetail() {
                 </Link>
                 <span className="text-white/40">/</span>
                 <span className="font-mono text-primary">{product.code}</span>
-                <span className="rounded-full border border-primary/40 bg-primary/15 px-2.5 py-0.5 text-xs text-primary">
+                {/* <span className="rounded-full border border-primary/40 bg-primary/15 px-2.5 py-0.5 text-xs text-primary">
                   {product.tag}
-                </span>
+                </span> */}
               </div>
               <h1 className="mt-4 md:mt-6 font-display text-3xl md:text-7xl font-bold leading-[1] md:leading-[0.95] text-balance">
                 {product.name}
