@@ -6,6 +6,7 @@ import hero from "@/assets/hero-excavator.jpg";
 import s590Main from "@/assets/products/S590-main.png";
 import s70Main from "@/assets/products/S70-main.png";
 import s76Main from "@/assets/products/S76-main.png";
+import s100Main from "@/assets/products/S100-main.png";
 import s86Main from "@/assets/products/S86-main.png";
 import s450Main from "@/assets/products/S450-main.png";
 import s510Main from "@/assets/products/S510-main.png";
@@ -37,7 +38,7 @@ import straightClamp from "@/assets/products/straight-clamp.png";
 // 모델별 메인 이미지 (개별 모델 전용 이미지가 있을 때 등록)
 const MODEL_IMAGES: Record<string, string> = {
   S70: s70Main,
-  S100: s70Main,
+  S100: s100Main,
   S76: s76Main,
   S86: s86Main,
   S450: s450Main,
