@@ -253,14 +253,14 @@ function AboutPage() {
                         <p className="mt-3 md:mt-5 text-muted-foreground text-sm md:text-base leading-relaxed">{co.intro}</p>
 
                         {/* Meta */}
-                        <dl className="mt-5 md:mt-8 space-y-4 md:space-y-5">
+                        <dl className="mt-5 md:mt-8 space-y-4 md:space-y-6">
                           <div className="flex items-start gap-3 md:gap-4">
                             {/* <span className="flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary/60">
                               <MapPin className="h-4 w-4 text-primary" />
                             </span> */}
                             <div className="flex-1">
-                              <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">주소</dt>
-                              <dd className="mt-1 text-xs md:text-[15px] text-foreground">
+                              <dt className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/90">주소</dt>
+                              <dd className="mt-1 text-sm md:text-lg text-foreground font-semibold">
                                 <a
                                   href={`https://map.naver.com/p/search/${encodeURIComponent(co.address)}`}
                                   target="_blank"
@@ -300,13 +300,13 @@ function AboutPage() {
                               <Phone className="h-4 w-4 text-primary" />
                             </span> */}
                             <div>
-                              <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                              <dt className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/90">
                                 대표번호
                               </dt>
                               <dd className="mt-1">
                                 <a
                                   href={`tel:${co.phone.replace(/-/g, "")}`}
-                                  className="text-xs md:text-[15px] font-semibold tracking-wide hover:text-primary transition-colors"
+                                  className="text-sm md:text-lg font-bold tracking-wide hover:text-primary transition-colors text-foreground"
                                 >
                                   {co.phone}
                                 </a>
@@ -318,8 +318,8 @@ function AboutPage() {
                               <Printer className="h-4 w-4 text-primary" />
                             </span> */}
                             <div>
-                              <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">FAX</dt>
-                              <dd className="mt-1 text-xs md:text-[15px] font-semibold tracking-wide text-foreground">
+                              <dt className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/90">FAX</dt>
+                              <dd className="mt-1 text-sm md:text-lg font-bold tracking-wide text-foreground">
                                 {co.fax && co.fax.trim() ? co.fax : "준비중"}
                               </dd>
                             </div>

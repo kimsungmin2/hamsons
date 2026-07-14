@@ -37,25 +37,21 @@ export const Route = createFileRoute("/")({
 const products = [
   {
     name: "밥캣 로더 시리즈 ",
-    spec: "1.3t — 5.9t",
     img: loaderCategoryImg,
     category: "skid-loader" as const,
   },
   {
     name: "밥캣 굴착기 시리즈",
-    spec: "1.7t — 3.8t",
     img: excavatorCategoryImg,
     category: "mini-excavator" as const,
   },
   {
     name: "밥캣 휠로더 시리즈",
-    spec: "버킷 0.85㎥급",
     img: wheelLoaderCategoryImg,
     category: "compact-wheel-loader" as const,
   },
   {
     name: "함손 밥캣 어태치먼트",
-    spec: "버킷 · 브레이커 · 오거 외",
     img: attachmentCategoryImg,
     category: "attachment" as const,
   },
@@ -255,10 +251,10 @@ function Index() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 text-sm font-medium text-white backdrop-blur">
+            {/* <div className="absolute bottom-5 left-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-3 py-1.5 text-sm font-medium text-white backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               24/7 Field Service
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
