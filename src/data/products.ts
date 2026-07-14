@@ -25,6 +25,14 @@ import s650B from "@/assets/products/S650-B.png";
 import s650C from "@/assets/products/S650-C.png";
 import s650D from "@/assets/products/S650-D.png";
 import s650E from "@/assets/products/S650-E.png";
+import hydraulicForks from "@/assets/products/hydraulic-forks.jpg";
+import customBucket from "@/assets/products/custom-bucket.jpg";
+import sweeper from "@/assets/products/sweeper.jpg";
+import solarForks from "@/assets/products/solar-forks.jpg";
+import pipeClamp from "@/assets/products/pipe-clamp.jpg";
+import tonBagHanger from "@/assets/products/ton-bag-hanger.png";
+import stainlessBucket from "@/assets/products/stainless-bucket.jpg";
+import straightClamp from "@/assets/products/straight-clamp.png";
 
 // 모델별 메인 이미지 (개별 모델 전용 이미지가 있을 때 등록)
 const MODEL_IMAGES: Record<string, string> = {
@@ -133,7 +141,7 @@ const USE_CASES_BY_CATEGORY: Record<ProductCategory, string[]> = {
   parts: ["유지보수"],
 };
 
-function bobcat(seed: BobcatSeed): Product {
+function bobcat(seed: BobcatSeed) {
   const categoryImg = CATEGORY_IMAGE[seed.category];
   const modelImg = MODEL_IMAGES[seed.code];
   const heroImg = modelImg ?? categoryImg;
@@ -141,7 +149,7 @@ function bobcat(seed: BobcatSeed): Product {
   return {
     id: seed.code.toLowerCase(),
     code: seed.code,
-    name: `밥캣 ${seed.code}`,
+    name: "밥캣 " + seed.code,
     category: seed.category,
     tag: seed.tag,
     shortDesc: seed.shortDesc,
@@ -158,7 +166,7 @@ function bobcat(seed: BobcatSeed): Product {
   };
 }
 
-const BOBCAT_SEEDS: BobcatSeed[] = [
+const BOBCAT_SEEDS = [
   // 스키드 스티어 로더 (S 시리즈)
   {
     code: "S70",
@@ -323,7 +331,7 @@ const BOBCAT_SEEDS: BobcatSeed[] = [
     tag: "Zero Tail",
     shortDesc: "도심·조경 현장에 최적화된 2톤급 제로 테일 미니 굴착기.",
     description:
-      "E20z는 컴팩트한 차체와 제로 테일 스윙을 갖춘 2톤급 미니 굴착기로, 조경과 도심 인프라 현장에서 폭넓게 사용됩니다.",
+      "E20z는 컴팩트한 차체와 제로 테일 스윙을 갖춘 2톤급 미니 굴착기으로, 조경과 도심 인프라 현장에서 폭넓게 사용됩니다.",
     specs: [
       { label: "운전중량", value: "1,900 kg (+90 kg) / 캐빈 장착시" },
       { label: "엔진출력", value: "13.8 ps" },
@@ -383,47 +391,296 @@ products.push(...BOBCAT_SEEDS.map(bobcat));
 // ─────────────────────────────────────────────────────────────
 // 함손 어태치먼트 라인업
 // ─────────────────────────────────────────────────────────────
-const hamsonSolarForksImg = attachmentImg;
-products.push({
-  id: "hamson-solar-forks",
-  code: "HS-SF",
-  name: "함손 태양광 유압식 지게발",
-  category: "attachment",
-  tag: "유압식 지게발",
-  shortDesc: "강인한 설계로 좁은 현장에서 무거운 중량물을 운송하기 위해 설계된 지게발.",
-  description:
-    "함손 태양광 유압식 지게발은 강인한 프레임 설계로 좁은 현장에서도 무거운 중량물을 안전하고 효율적으로 운송할 수 있도록 제작된 어태치먼트입니다. 태양광 패널·자재 운반 등 다양한 현장에서 활용 가능합니다.",
-  hero: hamsonSolarForksImg,
-  thumb: hamsonSolarForksImg,
-  gallery: [hamsonSolarForksImg, hamsonSolarForksImg, hamsonSolarForksImg],
-  specs: [
-    { label: "카테고리", value: "어태치먼트" },
-    { label: "호환 장비", value: "T76, T86" },
-    { label: "구동 방식", value: "유압식" },
-    { label: "용도", value: "중량물 운송" },
-  ],
-  features: [
-    {
-      title: "강인한 프레임 설계",
-      desc: "헤비듀티 구조로 무거운 중량물도 안전하게 지지하고 운반합니다.",
-    },
-    {
-      title: "협소 현장 최적화",
-      desc: "좁은 작업 공간에서도 효율적인 운송이 가능하도록 설계되었습니다.",
-    },
-    {
-      title: "유압식 정밀 제어",
-      desc: "유압 시스템으로 미세한 적재·하역 작업까지 정확하게 컨트롤합니다.",
-    },
-    {
-      title: "T76 · T86 호환",
-      desc: "밥캣 T76, T86 트랙 로더와의 호환을 통해 다양한 현장에 즉시 투입됩니다.",
-    },
-  ],
-  useCases: ["태양광 패널 운송", "자재 운반", "협소 현장 작업", "중량물 적재"],
-  price: "가격 문의",
-  priceNote: "부가세 별도. 옵션·운송비·등록비 미포함이며, 사양에 따라 변동될 수 있습니다.",
-});
+products.push(
+  {
+    id: "pipe-clamp",
+    code: "HS-PC",
+    name: "스키드로더 파이프클램프",
+    category: "attachment",
+    tag: "파이프 클램프",
+    shortDesc: "원형 파이프, 목재 및 원통형 자재를 굳게 움켜쥐어 운송하는 유압 집게.",
+    description:
+      "스키드로더 파이프클램프는 상부의 강력한 유압 홀더가 둥근 파이프나 나무 실린더 등을 위에서 꽉 눌러주어, 경사로 주행이나 험지 운반 시에도 자재가 이탈되지 않게 단단히 고정하는 특수 클램핑 지게발입니다.",
+    hero: pipeClamp,
+    thumb: pipeClamp,
+    gallery: [pipeClamp, pipeClamp, pipeClamp],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "클램프 작동 폭", value: "300 mm - 1,200 mm" },
+      { label: "구동 실린더", value: "헤비듀티 유압 실린더" },
+    ],
+    features: [
+      {
+        title: "강력한 실린더 고정",
+        desc: "상부 유압 홀더가 자재 규격에 맞춰 강한 압력으로 고정하여 흔들림이 전혀 없습니다.",
+      },
+      {
+        title: "이중 목재/배관 대응",
+        desc: "토목 배관용 콘크리트 파이프 및 벌목 현장의 원목을 모두 아우르는 넓은 클램핑 범위를 가집니다.",
+      },
+      {
+        title: "원목 보호형 패드",
+        desc: "집게 접촉부에 미끄럼 방지 홈과 보강재가 들어가 자재 손상을 저감합니다.",
+      },
+    ],
+    useCases: ["상하수도 파이프 공사", "원목·벌목 자재 운반", "철근 콘크리트 원형관 적재", "비틀림 자재 고정 운송"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "solar-forks",
+    code: "HS-SF",
+    name: "스키드로더 태양광 지게발",
+    category: "attachment",
+    tag: "태양광 지게발",
+    shortDesc: "태양광 구조물 및 백가이드 하중을 안전하게 견디는 고상 지게발.",
+    description:
+      "스키드로더 태양광 지게발은 등받이 프레임(백레스트)을 대폭 높여 제작한 특수 지게발로, 미끄러지기 쉽고 부피가 큰 태양광 모듈 패널과 지지 구조물을 안전하게 이동시킵니다.",
+    hero: solarForks,
+    thumb: solarForks,
+    gallery: [solarForks, solarForks, solarForks],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "T76, T86, S76, S86 등" },
+      { label: "백레스트 높이", value: "특수 고상 설계" },
+      { label: "포크 규격", value: "1,200 mm" },
+    ],
+    features: [
+      {
+        title: "안전 고상 백레스트",
+        desc: "적재물이 뒤로 넘어지거나 낙하하는 사고를 철저하게 예방하도록 프레임 높이를 보강했습니다.",
+      },
+      {
+        title: "강화형 메인 바디",
+        desc: "고장력 강재 프레임을 용접 가공하여 비틀림 강성을 획기적으로 개선했습니다.",
+      },
+      {
+        title: "태양광 현장 맞춤",
+        desc: "지반이 연약한 임야나 농가 태양광 현장의 모듈 이동 작업에 특화되어 있습니다.",
+      },
+    ],
+    useCases: ["태양광 패널 운송", "팔레트 자재 적재", "임야 기초 자재 정리", "고하중 상하역"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "sweeper",
+    code: "HS-SW",
+    name: "스키드로더 청소기",
+    category: "attachment",
+    tag: "청소기",
+    shortDesc: "고성능 유압 모터와 고탄성 브러시로 도로 및 현장 노면을 깨끗이 청소하는 장비.",
+    description:
+      "스키드로더 청소기는 강력한 유압 구동 모터를 탑재해 고속 회전하는 브러시로 도로, 현장, 농가의 흙먼지와 쓰레기를 신속하게 쓸어 담아 청소하는 고성능 청소 어태치먼트입니다.",
+    hero: sweeper,
+    thumb: sweeper,
+    gallery: [sweeper, sweeper, sweeper],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "청소 폭", value: "1,680 mm" },
+      { label: "브러시 소재", value: "고탄성 PP (폴리프로필렌)" },
+    ],
+    features: [
+      {
+        title: "고속 회전 유압 구동",
+        desc: "강력한 고압 유압 모터를 사용해 노면 청소 성능과 내구성이 탁월합니다.",
+      },
+      {
+        title: "고용량 집진 일체형",
+        desc: "수거한 흙먼지와 먼지 잔해를 일체형 내장 버켓에 수집하여 간편하게 상차 하역할 수 있습니다.",
+      },
+      {
+        title: "안전 하우징 커버",
+        desc: "먼지 날림과 돌튐 방지를 위한 올인원 철판 하우징으로 주변 작업 환경을 보호합니다.",
+      },
+    ],
+    useCases: ["포장 도로 모래 청소", "축사 및 마당 낙엽/사료 정리", "건설 현장 비산 먼지 억제", "겨울철 가벼운 제설"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "custom-bucket",
+    code: "HS-CB",
+    name: "스키드로더 제작 버켓",
+    category: "attachment",
+    tag: "제작 버켓",
+    shortDesc: "고장력 강판 구조와 다목적 적재 설계로 대량의 자재를 안전하게 이동하는 맞춤형 버켓.",
+    description:
+      "스키드로더 제작 버켓은 골재, 토사, 가축 사료, 비료 등 다양한 자재의 굴착 및 이동을 위해 견고하게 커스텀 제작된 헤비듀티 버켓입니다.",
+    hero: customBucket,
+    thumb: customBucket,
+    gallery: [customBucket, customBucket, customBucket],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "용량", value: "0.45 ㎥" },
+      { label: "너비", value: "1,730 mm" },
+    ],
+    features: [
+      {
+        title: "고장력 구조 강판",
+        desc: "외벽 두께를 보강하여 가혹한 굴삭 및 골재 적재 작업에도 찌그러지거나 뒤틀리지 않습니다.",
+      },
+      {
+        title: "강화형 립 플레이트",
+        desc: "지면 마찰이 잦은 바닥 전면부를 보강 강철 커터로 마감하여 긴 수명을 확보했습니다.",
+      },
+      {
+        title: "다용도 대용량 적재",
+        desc: "측면 패널 각도를 넓혀 자재가 흘러내리지 않고 가득 차도록 적재 효율을 개선했습니다.",
+      },
+    ],
+    useCases: ["토사 및 자갈 상차 작업", "농업 축사 사료 급이 이동", "공장 폐기물 수집 야적", "건설 골재 야외 정리"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "hydraulic-forks",
+    code: "HS-HF",
+    name: "스키드로더 유압식 지게발",
+    category: "attachment",
+    tag: "유압식 지게발",
+    shortDesc: "캐빈(운전석) 내부에서 포크 좌우 간격을 편리하게 유압으로 제어하는 자동 지게발.",
+    description:
+      "스키드로더 유압식 지게발은 작업자가 운전석에서 내리지 않고 내부 레버 조작만으로 팔레트 규격에 맞춰 지게발 폭을 자동으로 밀고 당길 수 있도록 유압 시스템이 빌트인된 스마트 어태치먼트입니다.",
+    hero: hydraulicForks,
+    thumb: hydraulicForks,
+    gallery: [hydraulicForks, hydraulicForks, hydraulicForks],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "작동 제어", value: "유압 실린더 자동 레일 제어" },
+      { label: "허용 하중", value: "최대 1,500 kg" },
+    ],
+    features: [
+      {
+        title: "캐빈 내부 폭 조절",
+        desc: "매번 내려서 수동으로 지게발 핀을 옮겨 꽂을 필요 없이 유압으로 순식간에 조절합니다.",
+      },
+      {
+        title: "고정밀 유압 실린더",
+        desc: "이중 복동 실린더가 좌우 포크를 독립적 또는 대칭형으로 부드럽게 정밀 이동시킵니다.",
+      },
+      {
+        title: "강화 가이드 레일",
+        desc: "특수 열처리 레일을 장착해 무거운 적재물이 올려진 상태에서도 원활한 슬라이딩을 지원합니다.",
+      },
+    ],
+    useCases: ["크기가 다양한 물류 팔레트 하역", "농가 벌목 원목/마대 슬라이딩 상차", "자재 창고 정밀 적재", "태양광 프레임 가이드 진입 운반"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "ton-bag-hanger",
+    code: "HS-TBH",
+    name: "스키드로더 톤백걸이",
+    category: "attachment",
+    tag: "톤백 걸이",
+    shortDesc: "1톤 규격의 대형 톤백(PP Bag)을 안전하게 이동하는 전용 행거 프레임.",
+    description:
+      "스키드로더 톤백걸이는 사료, 곡물, 모래, 비료 등이 충진된 1톤 용량의 대형 톤백을 로더 전면에 쉽고 빠르게 걸어서 트럭이나 야적 공간에 하역할 수 있도록 고안된 안전 행거 프레임입니다.",
+    hero: tonBagHanger,
+    thumb: tonBagHanger,
+    gallery: [tonBagHanger, tonBagHanger, tonBagHanger],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "정격하중", value: "최대 1,500 kg" },
+      { label: "걸이 고리 개수", value: "안전 4구 구조" },
+    ],
+    features: [
+      {
+        title: "이중 락킹 안전 걸쇠",
+        desc: "이동 시 톤백 귀가 고리에서 이탈되는 낙하 사고를 예방하는 안전 방지 락 걸쇠를 탑재했습니다.",
+      },
+      {
+        title: "시야 확보형 프레임",
+        desc: "행거 프레임 중앙부를 와이드 오프닝 구조로 제작하여 작업자가 전방 시야를 충분히 확보하도록 돕습니다.",
+      },
+      {
+        title: "높이 연장형 아치형 설계",
+        desc: "일반 지게발보다 높은 상차 높이를 제공하여 대형 트럭 적재함 상단까지 안전하게 투입이 가능합니다.",
+      },
+    ],
+    useCases: ["농가 비료·사료 톤백 이동", "건설 골재 마대 톤백 상차", "정비 부품 박스 톤백 이동", "곡물 톤백 수거 작업"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "stainless-bucket",
+    code: "HS-SB",
+    name: "스키드로더 스텐 버켓",
+    category: "attachment",
+    tag: "스텐 버켓",
+    shortDesc: "부식성 강한 비료, 사료 및 가축 분뇨 적재에 특화된 100% 스텐 버켓.",
+    description:
+      "스키드로더 스텐 버켓은 사료 배합 및 비료 하역, 분뇨 정리 시 암모니아나 습기에 의해 철판 버켓이 부식되는 한계를 완벽하게 극복하기 위해 최고급 스테인리스강(SUS304)으로 특수 용접 제작된 청결 버켓입니다.",
+    hero: stainlessBucket,
+    thumb: stainlessBucket,
+    gallery: [stainlessBucket, stainlessBucket, stainlessBucket],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "밥캣 스키드로더 전 기종" },
+      { label: "소재", value: "SUS 304 스테인리스강" },
+      { label: "폭", value: "1,730 mm" },
+    ],
+    features: [
+      {
+        title: "부식 원천 차단",
+        desc: "수분이나 강한 화학 반응을 일으키는 가축 사료, 분뇨 작업에서도 전혀 녹이 슬지 않습니다.",
+      },
+      {
+        title: "이지 클리닝 구조",
+        desc: "작업 후 간편한 고압 물세척만으로 점착된 찌꺼기를 완벽히 제거할 수 있어 축사 위생관리에 탁월합니다.",
+      },
+      {
+        title: "특수 아르곤 용접",
+        desc: "스테인리스 접합부에 다중 아르곤 패스 용접을 실시하여 강한 충격과 압력에도 틈새 크랙을 예방합니다.",
+      },
+    ],
+    useCases: ["축사 내부 퇴비 정리", "화학 비료 하역 및 배합", "발효 사료 피딩 작업", "염분 노면 복구 정리"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+  {
+    id: "straight-clamp",
+    code: "HS-SC",
+    name: "스키드로더 및 트렉터 전용 일자집게",
+    category: "attachment",
+    tag: "일자집게",
+    shortDesc: "스키드로더 및 농업용 트랙터에 공용 장착 가능한 일자형 집게.",
+    description:
+      "일자집게 어태치먼트는 스키드로더 및 농가용 트랙터 전방 로더에 범용 장착이 가능하도록 마운트를 이중화 설계하였으며, 마대포대, 원형 곤포 등을 굳건히 모아 집어 올릴 수 있는 가성비 높은 집게 장비입니다.",
+    hero: straightClamp,
+    thumb: straightClamp,
+    gallery: [straightClamp, straightClamp, straightClamp],
+    specs: [
+      { label: "카테고리", value: "어태치먼트" },
+      { label: "호환 장비", value: "스키드로더 및 트랙터 공용" },
+      { label: "구조", value: "일자형 그리퍼 구조" },
+      { label: "작동 제어", value: "유압식 홀더" },
+    ],
+    features: [
+      {
+        title: "로더 및 트랙터 호환",
+        desc: "퀵 커플러 전환 마운트 구조로 스키드로더와 농업용 트랙터에 손쉽게 교차 장착이 가능합니다.",
+      },
+      {
+        title: "일자형 최적 설계",
+        desc: "평평한 일자형 플레이트가 자재를 측면에서 조여 올리므로 면적당 압력이 골고루 분산됩니다. ",
+      },
+      {
+        title: "고장력 강관 프레임",
+        desc: "경량화와 동시에 충분한 비틀림 모멘트를 확보하여 장기간의 험업에도 뒤틀림이 없습니다.",
+      },
+    ],
+    useCases: ["마대자재 적재", "곤포 짚단 이동 및 파쇄 보조", "농가 비닐 하우스 골재 적재", "폐기물 야적 정리"],
+    price: "가격 문의",
+    priceNote: "부가세 별도. 옵션·운송비 미포함이며, 사양에 따라 변동될 수 있습니다.",
+  },
+);
 
 export { CATEGORY_LABEL };
 
