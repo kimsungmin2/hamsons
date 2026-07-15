@@ -77,8 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "함손건설기계 — 건설중장비" },
       { property: "og:description", content: "대한민국 건설현장의 동반자." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "함손건설기계" },
+      { property: "og:locale", content: "ko_KR" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "naver-site-verification", content: "c8b738c519648a7b533b681bc89886b95c4c6b36" },
+      { name: "google-site-verification", content: "GOOGLE_VERIFICATION_CODE" },
     ],
     links: [
       {
@@ -95,9 +98,57 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "함손건설기계",
+              alternateName: "유한회사 함손건설기계",
+              description:
+                "밥캣 공식 딜러 — 스키드로더, 미니 굴착기, 컴팩트 휠 로더 판매·렌탈·정비 전문 기업",
+              url: "https://hamsons.co.kr",
+              telephone: "+82-1577-7269",
+              faxNumber: "+82-61-331-5111",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "왕곡면 장산양산길 18",
+                addressLocality: "나주시",
+                addressRegion: "전남광주통합특별시",
+                postalCode: "58264",
+                addressCountry: "KR",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 35.0175,
+                longitude: 126.7114,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "09:00",
+                closes: "18:00",
+              },
+              sameAs: [],
+              areaServed: {
+                "@type": "Country",
+                name: "대한민국",
+              },
+              priceRange: "₩₩₩",
+            }),
+          }}
+        />
       </head>
       <body>
         {children}
