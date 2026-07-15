@@ -111,7 +111,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
               alternateName: "유한회사 함손건설기계",
               description:
                 "밥캣 공식 딜러 — 스키드로더, 미니 굴착기, 컴팩트 휠 로더 판매·렌탈·정비 전문 기업",
-              url: "https://hamsons.co.kr",
+              url: "https://hamson.kr",
               telephone: "+82-1577-7269",
               faxNumber: "+82-61-331-5111",
               address: {
