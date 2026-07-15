@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "ko_KR" },
       { name: "twitter:card", content: "summary" },
       { name: "naver-site-verification", content: "c8b738c519648a7b533b681bc89886b95c4c6b36" },
-      { name: "google-site-verification", content: "GOOGLE_VERIFICATION_CODE" },
+      { name: "google-site-verification", content: "h3KTckSVjF2Pw0rbKJ1huc9XAv3KVcswZvWk5KNhZ5o" },
     ],
     links: [
       {
